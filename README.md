@@ -1,42 +1,92 @@
-# O.E.C. Japanese Express · Sushi 'n Hibachi
+# O.E.C. Japanese Express
 
-Redesigned website for O.E.C.'s two Tampa Bay locations:
+Full-stack website + online ordering (everything but payment) for
+**O.E.C. Japanese Express** — 2438 66th St North, St. Petersburg, FL 33710 ·
+727-345-4088. Closed Tuesdays.
 
-- **O.E.C. Japanese Express** — 2438 66th St N, St. Petersburg, FL 33710 · 727-345-4088
-- **O.E.C. Japanese Sushi 'n Hibachi** — 13847 Walsingham Rd, Largo, FL 33774 · 727-366-6126
+Customers browse the full menu (282 dishes), build a cart, and place a
+pickup or delivery order; staff work the queue on a live kitchen dashboard.
+Payment is settled at pickup/delivery — no card online.
 
-A fully static site (no build step, no framework) styled after traditional
-Japanese design: washi-paper backgrounds, sumi-ink dark sections, vermilion
-(shu-iro) accents, seigaiha wave patterns and Mincho display typography.
+## Stack
 
-## Structure
+| Layer    | Tech                                                             |
+|----------|------------------------------------------------------------------|
+| Frontend | React 19 (Vite, JSX), react-router-dom v7, axios — custom CSS design system (washi/sumi/vermilion, no UI framework) |
+| Backend  | Flask + Flask-SQLAlchemy + Flask-CORS                            |
+| Database | SQLite by default; set `SQLALCHEMY_DATABASE_URI` for Postgres    |
 
-```
-index.html          Home — hero, story, specialties, gallery, locations & hours
-menu.html           Full menu — 29 categories / 282 items, search + category nav
-css/style.css       Design system
-js/menu-data.js     Menu data (generated — see below)
-js/site.js          Nav, reveal animations, menu rendering, search, scrollspy
-assets/             Seal + seigaiha SVGs, food photography
-```
+## Quick start
 
-## Running locally
-
-It's static — open `index.html` in a browser, or serve the folder:
+Backend (port 5000):
 
 ```
-python -m http.server 8000
+cd backend
+python -m venv venv
+venv\Scripts\pip install -r requirements.txt
+venv\Scripts\python scripts\seed.py     # builds tables + loads the menu
+venv\Scripts\python main.py
 ```
+
+Frontend (port 5173, proxies `/api` to 5000):
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173 — the kitchen dashboard is at `/kitchen`
+(default key `oec-kitchen`; change via `KITCHEN_KEY` in `backend/.env`).
+
+## How it fits together
+
+```
+frontend/src/
+  pages/        Home, Menu (search + add to cart), Checkout,
+                OrderStatus (/order/:code, polls), Kitchen (/kitchen)
+  components/   Header (cart badge), Footer, CartDrawer
+  contexts/     CartContext — cart lines in localStorage
+  styles/       site.css — the whole design system
+
+backend/
+  config_db.py  app + db + constants (TAX_RATE, DELIVERY_MINIMUM, KITCHEN_KEY)
+  main.py       blueprint registration + entrypoint
+  models/       Location · Category · MenuItem · PriceOption · Order · OrderItem
+  routes/       menu_routes (GET /api/menu, /api/locations)
+                order_routes (POST /api/orders, GET /api/orders/<code>,
+                              /api/kitchen/* behind X-Kitchen-Key)
+  scripts/      menu_seed.json + seed.py (idempotent — reseeding the menu
+                never touches placed orders)
+```
+
+Domain rules worth knowing:
+
+- **Money is integer cents everywhere.** Formatting happens only at render.
+- **The server never trusts client prices.** Orders are repriced from
+  `PRICE_OPTION` rows at POST time and snapshot name/price per line, so
+  menu edits never rewrite order history.
+- Order status flow: `received → confirmed → ready → completed` (or
+  `cancelled`). The status page polls every 10 s; the kitchen every 8 s.
+- Delivery has a $15.00 pre-tax minimum (enforced client- and server-side);
+  tax is 7% (FL 6% + Pinellas County 1%).
 
 ## Menu data
 
-`js/menu-data.js` was parsed from the restaurant's live online menu
-(oecjapanesesushinhibachi.com, July 2026). Each category carries an English
-name, a Japanese label, a menu-page group, an optional note, and its items
-(`name`, `desc`, `prices[{label, amount}]`, `spicy`). To update prices or
-items, edit that file directly — the menu page renders entirely from it.
+`backend/scripts/menu_seed.json` holds the menu (29 categories / 282 items
+with descriptions, price variants, spicy flags, Japanese labels), parsed
+from the restaurant's online menu in July 2026. Reseed any time with
+`python scripts/seed.py`. **Prices should be reviewed with the owner before
+launch**, and some categories (e.g. Bubble Tea) need confirming for this
+location.
 
-## Deploying
+## Before a real launch
 
-Any static host works (GitHub Pages, Netlify, Cloudflare Pages). The only
-external dependency is Google Fonts (Shippori Mincho + Zen Kaku Gothic New).
+- Payment (Stripe) if online payment is wanted — the checkout is built to
+  slot it in after the order summary step.
+- Order notifications the kitchen will actually see (printer/SMS/email) —
+  the dashboard covers the demo, but a busy kitchen needs a push channel.
+- Owner-provided photography (`frontend/public/assets/img/` is a straight
+  swap — current photos are OEC's own uploads from their old site).
+- Real hosting: build the frontend (`npm run build`) and serve `dist/`
+  behind the same origin as Flask, or any static host + API host pair.

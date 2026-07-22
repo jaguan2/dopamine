@@ -1,7 +1,4 @@
-// O.E.C. Japanese Express & Sushi'n Hibachi - full menu data
-// Source: oecjapanesesushinhibachi.com (parsed 2026-07-22). 29 categories / 282 items.
-// Prices shown are the current online-menu prices and may vary by location.
-const MENU = [
+[
  {
   "category": "Appetizer",
   "jp": "前菜",
@@ -3373,4 +3370,4 @@ const MENU = [
    }
   ]
  }
-];
+]
