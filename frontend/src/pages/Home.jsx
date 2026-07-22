@@ -14,8 +14,8 @@ const SPECIALTIES = [
     cta: "See hibachi",
   },
   {
-    kanji: "弁", title: "Bento & Lunch", link: "/menu#group-bento-lunch",
-    text: "Lunch bento with California roll, salad, rice and shumai — plus two-roll sushi lunch specials.",
+    kanji: "弁", title: "Bento & Lunch Specials", link: "/menu#group-bento-lunch",
+    text: "Lunch bento for $13.50 with California roll, salad, rice and shumai — plus any two classic rolls for $8.99, Mon–Sat.",
     cta: "See lunch",
   },
   {
@@ -24,18 +24,16 @@ const SPECIALTIES = [
     cta: "Build a bowl",
   },
   {
-    kanji: "茶", title: "Drinks & Desserts", link: "/menu#group-drinks-desserts-sides",
-    text: "Bubble tea, Ramune, mochi ice cream, tempura banana and Thai donuts to finish.",
-    cta: "See drinks",
+    kanji: "麺", title: "Noodles & Kitchen", link: "/menu#cat-yaki-udon-yaki-soba",
+    text: "Yaki udon, noodle soups, teriyaki, katsu and wok classics like General Tso's chicken.",
+    cta: "See noodles",
   },
 ];
 
 const GALLERY = [
-  { src: "/assets/img/party-platter.jpg", caption: "Sushi & sashimi party platter", alt: "Sashimi martini and party platter of rolls" },
-  { src: "/assets/img/signature-roll.jpg", caption: "Signature special roll", alt: "Signature roll topped with spicy salmon and tobiko" },
-  { src: "/assets/img/california-roll.jpg", caption: "Crunch roll", alt: "Close-up of a crunch roll with sesame" },
-  { src: "/assets/img/shrimp-tempura-roll.jpg", caption: "Shrimp tempura roll", alt: "Shrimp tempura roll with wasabi and ginger" },
-  { src: "/assets/img/dining-room.jpg", caption: "Dine in with us", alt: "O.E.C. dining room with dark wood tables" },
+  { src: "/assets/img/oec-storefront-day.jpg", caption: "Find us on 66th Street", alt: "O.E.C. Japanese Express storefront at 2438 66th St N" },
+  { src: "/assets/img/chicken-noodle-soup.jpg", caption: "Chicken noodle soup off the wok", alt: "Bowl of chicken noodle soup with egg and carrots" },
+  { src: "/assets/img/oec-storefront-night.jpg", caption: "Open late Fri & Sat", alt: "O.E.C. neon sign lit up at night" },
 ];
 
 export default function Home() {
@@ -106,8 +104,8 @@ export default function Home() {
               the day, fish cut to order, vegetables from the morning delivery.
             </p>
             <p>
-              The menu runs deep — over 280 dishes — from a humble egg roll to
-              a sushi paradise platter for two. Come hungry, leave happy.
+              The menu runs deep — from a $3.75 egg roll to sushi paradise
+              platters for two. Come hungry, leave happy.
             </p>
             <div className="story-points" role="list">
               <div className="story-point" role="listitem">
@@ -126,11 +124,11 @@ export default function Home() {
           </div>
           <figure className="story-figure">
             <img
-              src="/assets/img/shrimp-tempura-roll.jpg"
-              alt="Shrimp tempura futomaki rolls drizzled with eel sauce"
+              src="/assets/img/oec-storefront-dusk.jpg"
+              alt="O.E.C. Japanese Express storefront at dusk, neon sign glowing"
               loading="lazy"
             />
-            <figcaption lang="ja">海老天巻き</figcaption>
+            <figcaption lang="ja">店構え</figcaption>
           </figure>
         </div>
       </section>

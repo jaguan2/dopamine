@@ -25,7 +25,7 @@ GROUP_JP = {
     "Sushi Bar": "寿司",
     "Hibachi & Kitchen": "鉄板・台所",
     "Bento & Lunch": "弁当・ランチ",
-    "Drinks, Desserts & Sides": "飲物・甘味",
+    "Drinks & Sides": "飲物・お供",
 }
 
 LOCATIONS = [
