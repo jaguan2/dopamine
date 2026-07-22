@@ -1,0 +1,3376 @@
+// O.E.C. Japanese Express & Sushi'n Hibachi - full menu data
+// Source: oecjapanesesushinhibachi.com (parsed 2026-07-22). 29 categories / 282 items.
+// Prices shown are the current online-menu prices and may vary by location.
+const MENU = [
+ {
+  "category": "Appetizer",
+  "jp": "前菜",
+  "group": "Starters & Soups",
+  "order": 10,
+  "note": "",
+  "items": [
+   {
+    "name": "Edamame",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "4.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Kani Cheese (6 pcs)",
+    "desc": "(Krab Rangoon)",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Japanese Egg Roll (2 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "4.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp or Pork Egg Roll (2)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "4.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Krab Egg Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shumai (Steamed Dumpling)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Age Tofu Crispy Tofu w. Tempura Sauce",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Soft Shell Krab Crispy Fried Soft Shell Krab",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Rock Shrimp",
+    "desc": "Chopped tempura fried shrimp served w. sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fried Calamari",
+    "desc": "Lightly breaded deep fried squid ring w. spicy sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Baby Octopus",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Gyoza",
+    "desc": "Pan Fried Dumpling",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tempura Vegetable",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tempura Chicken or Shrimp (4)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fried Pepper",
+    "desc": "Zesty Asian hot pepper stuffed with spicy salmon and cream cheese",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Krab Stick Tempura (5)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fancy lsland",
+    "desc": "Fried tempura krab w.cream cheese,eel and yum yum",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken Skewer (3)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi Bar Appetizers",
+  "jp": "酒肴",
+  "group": "Starters & Soups",
+  "order": 11,
+  "note": "",
+  "items": [
+   {
+    "name": "Sushi Appetizers (5 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Appetizers (7 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna Tataki",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Tataki",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail Jalapeno",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Tuna Tartar",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Tartar",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail Tartar",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna Yoake",
+    "desc": "Raw tuna in house spicy sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Hawaiian Tuna Tartar",
+    "desc": "Tuna tossed w. avocado, mango mixed w. wasabi sauce, served w. wonton chips",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.25"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Soup",
+  "jp": "汁物",
+  "group": "Starters & Soups",
+  "order": 12,
+  "note": "",
+  "items": [
+   {
+    "name": "Miso Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Onion Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Wonton Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Egg Drop Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Wonton Egg Drop Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Vegetable Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Salad",
+  "jp": "サラダ",
+  "group": "Starters & Soups",
+  "order": 13,
+  "note": "",
+  "items": [
+   {
+    "name": "House Salad",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Cucumber Salad",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "4.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Seaweed Salad",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Squid Salad",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Kani Salad",
+    "desc": "Krab, caviar, cucumber mixed with mayonnaise",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Avocado Salad",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Salad",
+    "desc": "Salmon, tuna, white fish, yellowtail, with scallion, masago and ponzu sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.99"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi or Sashimi",
+  "jp": "握り・刺身",
+  "group": "Sushi Bar",
+  "order": 20,
+  "note": "Sushi 2 Pieces per Order, Sashimi ($1 extra) 3 Pieces per Order (Brown Rice Extra $1)",
+  "items": [
+   {
+    "name": "Krab",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "White Fish",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tamago (Egg Custard)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Masago (Fish Egg)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Eel",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Red Clam",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Squid",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Octopus",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Escolar",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Scallop",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Ikura (Salmon Roe)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.00"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi or Hand Roll",
+  "jp": "巻き寿司・手巻き",
+  "group": "Sushi Bar",
+  "order": 21,
+  "note": "(Brown Rice Extra $1) (Hand Roll Only For 1 to 34)",
+  "items": [
+   {
+    "name": "Cucumber Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Avocado Roll (6 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Asparagus Roll (6 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Krab Roll (6 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Vegetable Roll",
+    "desc": "Lettuce, avocado, cucumber",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yasai Roll",
+    "desc": "Avocado, asparagus and cucumber",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sweet Potato Roll",
+    "desc": "Tempura sweet potato served w. eel sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "California Roll (8 pcs)",
+    "desc": "Krab avocado, cucumber inside masago (fish egg) on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Skin Roll",
+    "desc": "Grilled salmon skin & cucumber",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna Roll (5 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Roll (6 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Eel Avocado Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna Avocado Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Avocado Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Philly Roll",
+    "desc": "Krab meat, cream cheese inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Krab Roll",
+    "desc": "Spicy krab inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Alaskan Roll",
+    "desc": "Salmon, avocado & cucumber",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Boston Roll",
+    "desc": "Shrimp, lettuce, cucumber & mayo",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fancy Roll",
+    "desc": "Tempura krab sticks & sweet potato",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Peanut Avocado Roll",
+    "desc": "Honey roasted peanut and avocado",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Eel Roll (8 pcs)",
+    "desc": "Eel w. cucumber inside, served w. eel sauce on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon & Cream Cheese Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Banana Roll",
+    "desc": "Banana, avocado and cream cheese",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Tuna Roll (8 pcs)",
+    "desc": "Spicy tuna, tempura flakes & spicy mayo inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.25"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Spicy Salmon Roll",
+    "desc": "Spicy salmon tempura flakes & spicy mayo inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Crunch Krab Roll (8 pcs)",
+    "desc": "Krab stick, spicy krab, served w. eel sauce and spicy mayo on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Scallops",
+    "desc": "Spicy scallops, tempura crunch & onion",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.50"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Snow Crab Roll (8 pcs)",
+    "desc": "Snow crab, cucumber & tempura flakes",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Crawfish Roll (8 pcs)",
+    "desc": "Spicy crawfish and cucumber inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Futo Maki Roll",
+    "desc": "Krab, tamago, cucumber, asparagus & avocado.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail Scallion Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail Jalapeno Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.75"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Spicy Yellowtail and Scallion",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.75"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Pepper Tuna Roll",
+    "desc": "Pepper tuna and avocado",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tampa Roll",
+    "desc": "Fried grouper cucumber, avocado & eel sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Tempura Roll",
+    "desc": "Tempura shrimp, cucumber, avocado, masago served w. eel sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Crunch Shrimp Roll (8 pcs)",
+    "desc": "Tempura shrimp, Tempura flakes cucumber, eel sauce on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken Tempura Roll",
+    "desc": "Tempura chicken, cucumber, avocado w. sauce on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "7.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Mexican Roll",
+    "desc": "Tempura shrimp, avocado, masago, spicy mayo & eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Spider Roll (6 pcs)",
+    "desc": "Soft shell krab, cucumber, avocado, masago, eel sauce inside of the roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "OEC Roll",
+    "desc": "Shrimp, krabmeat, cream cheese, avocado (fried) w. eel sauce, spicy mayo on top",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fried Bagel Roll",
+    "desc": "Salmon, cream cheese, avocado wrapped with soy paper (fried) served w. sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Tuna Tempura Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.25"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Ninja Roll",
+    "desc": "Spicy salmon, avocado & crunch topped w. black sesame seed",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Rock Roll",
+    "desc": "Tempura roll w. fish, krab sticks, shrimp, avocado, served w. shrimp sauce & kimchi",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Rainbow Roll (8 pcs)",
+    "desc": "Tuna, salmon, white fish and avocado on the of California roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Red Devil Roll",
+    "desc": "Fried krab sticks inside, topped w. crunchy spicy tuna， eel sauce & spicy mayo sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.75"
+     }
+    ],
+    "spicy": true
+   }
+  ]
+ },
+ {
+  "category": "Sushi Special Roll",
+  "jp": "特製巻き寿司",
+  "group": "Sushi Bar",
+  "order": 22,
+  "note": "(Brown Rice Extra $1)",
+  "items": [
+   {
+    "name": "Volcano Roll (8 pcs)",
+    "desc": "Spicy scallop, baked with mayo on top of California Roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Dancing Eel Roll",
+    "desc": "Tempura shrimp w. cream cheese inside, eel and avocado on top.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Dragon Roll (8 pcs)",
+    "desc": "Eel and avocado on top of California roll.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Dynamite Roll (8 pcs)",
+    "desc": "Baked mixed scallops, shrimp, krab meat, w. mayo on top of California roll.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Tornado Roll (8 pcs)",
+    "desc": "Tempura shrimp and cream cheese inside, top w. krab meat and eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Crazy Tuna Roll",
+    "desc": "Crunchy spicy tuna topped w. pepper tuna & avocado and wasabi sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Japanese Bagel Roll",
+    "desc": "Crab, cucumber, avocado w. cream cheese, salmon on top.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sunshine Roll",
+    "desc": "Spicy salmon with crunch inside, topped with salmon, avocado and masago.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Master Mind Roll",
+    "desc": "Salmon, avocado, and crunch inside, topped with spicy crab, spicy mayo sauce and sesame sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Titanic Roll (8 pcs)",
+    "desc": "Tempura shrimp and cream cheese inside, krab meat and avocado in soy wrap, top w. eel sauce and shrimp sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Pink Lady Roll",
+    "desc": "Spicy tuna, shrimp tempura, and avocado, wrapped with soy paper, served with spicy mayo, eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Golden Dream Roll",
+    "desc": "Salmon, cream cheese & avocado, topped tempura shrimp & avocado, with eel sauce & spicy mayo.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tiger Roll",
+    "desc": "Tuna, krab, avocado, masago inside, topped with salmon, eel, crunch and scallion, served with eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Out of Control Roll",
+    "desc": "Tuna, white fish & salmon, avocado & asparagus inside, topped tuna & salmon, served w. eel sauce, spicy mayos, shrimp sauce & kimchi.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Eternal Lover Roll",
+    "desc": "Spicy tuna, avocado inside, topped w. tuna, served w. spicy mayo",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Silent Scream Roll",
+    "desc": "Eel tempura, cream cheese & cucumber inside, topped with spicy tuna, avocado & scallion, served with eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Vietnamese Sashimi Roll",
+    "desc": "Tuna, salmon. white fish, avocado, cucumber, jalapeno & lettuce, wrapped in rice paper, served w. grapefruit ponzu, shrimp sauce & kamchi sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Manhattan Roll",
+    "desc": "Shrimp tempura, avocado topped w. spicy tuna, masago, scallion & crunchy",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "New Orleans Roll",
+    "desc": "Spicy crawfish, avocado, crunch, topped w. spicy tuna & spicy crab, tobiko, served w. eel sauce, spicy mayo.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Rocky Two Roll",
+    "desc": "Shrimp tempura, krab, eel, masago, avocado, wrapped in soy pepper, served w. eel sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Girl Roll",
+    "desc": "Spicy salmon, crunch avocado, topped w. tuna, white tuna, scallop w. spicy sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Sandwich Roll",
+    "desc": "Spicy tuna, avocado & eel wrapped w. soy paper, topped w. black tobiko, wasabi tobiko & masago.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Angel Roll",
+    "desc": "Tuna, white tuna, avocado, asparagus, wrapped w. soy paper, topped w. tobiko, scallion.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Iron Roll",
+    "desc": "Spicy tuna, avocado, crunch topped w. avocado, eel & wasabi tobiko.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Mango Tango Roll",
+    "desc": "Krab, cream cheese and masago inside, outside with avocado, topped with grilled tuna and mango.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tuna Volcano Roll",
+    "desc": "Tuna, asparagus, scallion, cream cheese inside, outside with avocado, topped with grilled spicy tuna and mango.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "XXX Hoo Roll",
+    "desc": "Tuna, masago, scallions, cucumber and spicy sauce, topped with avocado and slices of jalapeno pepper spicy hot.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Monster Roll",
+    "desc": "Imitation crab, avocado, cream cheese inside, outside topped with imitation crabmeat salad.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Venus Roll",
+    "desc": "Tempura shrimp, imitation crab scallion and mayo, outside with masago, avocado and tuna.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Green Hornet Roll",
+    "desc": "Salmon, tuna, cream cheese, cucumber and asparagus, wrapped with avocado, this roll has no rice.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Babba Gump Roll",
+    "desc": "Shrimp, tempura, avocado, masago, topped with shrimp and avocado, shrimp sauce.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Island Roll",
+    "desc": "White fish, white tuna, avocado, mango top w. ginger masago, jalapeno, salmon tuna w. sweet chili sauce, eel sauce & spicy mayo sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Indian Rocks Roll",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Beauty Beast",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Naruto",
+  "jp": "なると巻き",
+  "group": "Sushi Bar",
+  "order": 23,
+  "note": "(Wrapped with Cucumber)",
+  "items": [
+   {
+    "name": "Rainbow Naruto",
+    "desc": "Tuna, salmon, white fish, krab, avocado, miso sauce",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Tuna Naruto",
+    "desc": "(Spicy tuna & avocado)",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.75"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Tuna & Avocado",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon & Avocado",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Yellowtail & Avocado",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "KC Roll",
+    "desc": "Salmon, cream cheese and krab rolled with cucumber skin",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.75"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi Bar Special",
+  "jp": "寿司盛り合わせ",
+  "group": "Sushi Bar",
+  "order": 24,
+  "note": "(Served w. Soup or Salad) (Brown Rice Extra $1)",
+  "items": [
+   {
+    "name": "Sushi (1)",
+    "desc": "2 pcs tuna, 2 pcs salmon, 1 California Roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi (2)",
+    "desc": "2 pcs shrimp, 2 pcs eel, 1 California roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi (3)",
+    "desc": "2 pcs tuna, 2 pcs salmon, 1 pcs white fish, 1 pcs shrimp, spicy tuna roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi",
+    "desc": "12 pcs of assorted raw fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi & Sashimi Combo",
+    "desc": "9 pcs sashimi, 4 pcs sushi, 1 California roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi Paradise For Two",
+    "desc": "18 pcs with tiger roll, 2 miso and 2 house salad",
+    "prices": [
+     {
+      "label": "",
+      "amount": "48.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Paradise For Two",
+    "desc": "30 pcs 2 Miso and 2 House Salad",
+    "prices": [
+     {
+      "label": "",
+      "amount": "48.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chirashi Sushi",
+    "desc": "12 pcs of raw fish, krab and tamago over seasoned rice.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "23.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon Don",
+    "desc": "9 pcs salmon over seasoned rice",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Unagi Don",
+    "desc": "BBQ eel over seasoned rice",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi & Sashimi Combo Paradise",
+    "desc": "Edamame, 10 pcs sushi, 20 pcs sashimi, 1 out of control roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "53.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Lover Paradise",
+    "desc": "Included: Edamame, beef negimaki or shrimp tempura, appetizers, 20 pcs sashimi, 12 pcs sushi, 1 eternal lover roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "68.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi Combo",
+  "jp": "寿司コンボ",
+  "group": "Sushi Bar",
+  "order": 25,
+  "note": "Brown Rice Extra $2",
+  "items": [
+   {
+    "name": "Maki Platter",
+    "desc": "Tuna roll, vegetable roll and shrimp tempura roll.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi Regular",
+    "desc": "8 pcs of assorted sushi & California Roll.",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Regular",
+    "desc": "10 pcs of assorted sliced of fish & tuna roll",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.99"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Poke Bowl",
+  "jp": "ポケ丼",
+  "group": "Sushi Bar",
+  "order": 26,
+  "note": "All Poke Bowl Come w. Crab, Cucumber, Crunchy, Seaweed Salad, Sesame Seeds, Brown Rice Extra $1",
+  "items": [
+   {
+    "name": "Poke Bowl (Two Scoop Fish)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Poke Bowl (Three Scoop Fish)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.60"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Hibachi Entree",
+  "jp": "鉄板焼",
+  "group": "Hibachi & Kitchen",
+  "order": 30,
+  "note": "Served w. White Rice, Mixed Vegetable, Sweet Carrots & House Salad, Fried Rice,Brown Rice Extra $2, Noodle Extra $1",
+  "items": [
+   {
+    "name": "Chicken Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.45"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.45"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon, Tuna or White Fish Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Jumbo Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.55"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Hibachi Dinner",
+  "jp": "鉄板焼（夜）",
+  "group": "Hibachi & Kitchen",
+  "order": 31,
+  "note": "Served Fried Rice or Noodle Extra $1, Brown Rice Extra $2 Sweet Carrots & House Salad.",
+  "items": [
+   {
+    "name": "Vegetable Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tofu (Mixed Vegetable) Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.45"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.45"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon, Tuna or White Fish Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "0.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "18.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Jumbo Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.55"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Teriyaki",
+  "jp": "照り焼き",
+  "group": "Hibachi & Kitchen",
+  "order": 32,
+  "note": "(w. White Rice, Mixed Vegetable, Onion Soup & House Salad)",
+  "items": [
+   {
+    "name": "Shrimp, Steak, Scallop or Seafood Teriyaki",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "19.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon or Chicken Teriyaki",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Tempura",
+  "jp": "天ぷら",
+  "group": "Hibachi & Kitchen",
+  "order": 33,
+  "note": "(Served with White Rice)",
+  "items": [
+   {
+    "name": "Vegetable Tempura",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken Tempura (8 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Tempura (8 pcs)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Katsu",
+  "jp": "カツ",
+  "group": "Hibachi & Kitchen",
+  "order": 34,
+  "note": "(Breaded & Deep Fried, Served w. Salad or Soup, White Rice)",
+  "items": [
+   {
+    "name": "Chicken Katsu",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Pork Katsu",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Yakimeshi",
+  "jp": "焼き飯",
+  "group": "Hibachi & Kitchen",
+  "order": 35,
+  "note": "w. Fried Rice (Brown Rice Extra $2, Noodle Extra $1)",
+  "items": [
+   {
+    "name": "Chicken Yakimeshi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Yakimeshi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Yakimeshi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Combo Yakimeshi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken, Shrimp & Steak Yakimeshi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sweet & Sour Chicken (w. egg roll)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Orange Chicken (w. egg roll)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "General Tso's Chicken (w. egg roll)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sesame Chicken (w. Egg Roll)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Yaki Udon / Yaki Soba",
+  "jp": "焼きうどん・そば",
+  "group": "Hibachi & Kitchen",
+  "order": 36,
+  "note": "(Stir-Fried Noodles, Served w. Miso Soup)",
+  "items": [
+   {
+    "name": "Chicken Yaki Udon / Yaki Soba",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Yaki Udon / Yaki Soba",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Yaki Udon / Yaki Soba",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Vegetable Yaki Udon / Yaki Soba",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Combo Yaki Udon / Yaki Soba",
+    "desc": "chicken,shrimp,and steak",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken,Shrimp and Steak",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "20.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Noodle Soup",
+  "jp": "麺類",
+  "group": "Hibachi & Kitchen",
+  "order": 37,
+  "note": "(Udon or Soba, Served w. House Salad)",
+  "items": [
+   {
+    "name": "Chicken Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Vegetable Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Spicy Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Spicy Seafood Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": true
+   },
+   {
+    "name": "Combo Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "17.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken,Shrimp and Steak Noodle Soup",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "20.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Entrees From The Kitchen",
+  "jp": "台所より",
+  "group": "Hibachi & Kitchen",
+  "order": 38,
+  "note": "",
+  "items": [
+   {
+    "name": "Sweet & Sour Chicken",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "10.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sesame Chicken",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Orange Chicken",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "General Tso's Chicken",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "11.75"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Healthy Food",
+  "jp": "蒸し料理",
+  "group": "Hibachi & Kitchen",
+  "order": 39,
+  "note": "(w. White Rice) (Brown Rice Extra $1)",
+  "items": [
+   {
+    "name": "Steamed Mixed Vegetable",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "8.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steamed Chicken w. Mixed Veg.",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "10.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steamed Shrimp w. Mixed Veg.",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "11.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steamed Chicken w. Broccoli",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "10.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Dinner Bento Box",
+  "jp": "夜の弁当",
+  "group": "Bento & Lunch",
+  "order": 40,
+  "note": "Served w. California Roll, House Salad, White Rice (Fried Rice or Noodle extra $1, Brown Rice extra $2) & Shumai or Egg Roll",
+  "items": [
+   {
+    "name": "Teriyaki Bento Box",
+    "desc": "Chicken, steak, shrimp, salmon or white fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Negimaki Bento Box",
+    "desc": "Steak",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Katsu Bento Box",
+    "desc": "Chicken",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi Bento Box",
+    "desc": "5 pcs of assorted raw fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Bento Box",
+    "desc": "5 pcs of assorted raw fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Lunch Bento",
+  "jp": "昼の弁当",
+  "group": "Bento & Lunch",
+  "order": 41,
+  "note": "Served w. California Roll, House Salad, White Rice (Fried Rice or Noodle extra $1, Brown Rice extra $2) & Shumai or Egg Roll",
+  "items": [
+   {
+    "name": "Teriyaki Bento Box",
+    "desc": "Chicken, steak, shrimp, salmon or white fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Negimaki Bento Box",
+    "desc": "Steak",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Katsu Bento Box",
+    "desc": "Chicken",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi Bento Box",
+    "desc": "5 pcs of assorted raw fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sashimi Bento Box",
+    "desc": "5 pcs of assorted raw fish",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Hibachi Lunch",
+  "jp": "鉄板焼（昼）",
+  "group": "Bento & Lunch",
+  "order": 42,
+  "note": "Served with Sweet Carrots, Fried Rice or Noodle Extra$1 ,Brown Rice Extra $2（Monday-Sunday 11:00am-3:00pm)",
+  "items": [
+   {
+    "name": "Vegetable Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Tofu (Mixed Vegetable) Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "10.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "11.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Salmon, Tuna or White Fish Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "12.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "13.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "14.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp & Scallops Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "16.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Jumbo Shrimp Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.55"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken & Shrimp & Steak Hibachi",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "15.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Sushi Lunch Special Roll",
+  "jp": "ランチ巻き",
+  "group": "Bento & Lunch",
+  "order": 43,
+  "note": "w. Onion Soup, Miso Soup or House Salad",
+  "items": [
+   {
+    "name": "Any Two Rolls",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "9.99"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Bubble Tea",
+  "jp": "タピオカ",
+  "group": "Drinks, Desserts & Sides",
+  "order": 50,
+  "note": "",
+  "items": [
+   {
+    "name": "Classic Milk Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Passion Fruit Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Taro Milk Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Mango Green Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Thai Milk Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Strawberry Green Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fresh Lemon Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Passion Fruit Sparkling Drink",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Mango Sparkling Drink",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Strawberry Sparkling Drink",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Beverages",
+  "jp": "お飲み物",
+  "group": "Drinks, Desserts & Sides",
+  "order": 51,
+  "note": "",
+  "items": [
+   {
+    "name": "Bottle Water",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "1.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Soda (can)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Ice Tea",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Iced Japanese Green Jasmine Tea (Can)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Thai Ice Tea (No Refill)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shirley Temple (Complimentary Refill)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "2.99"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Ramune Drink (Japanese Carbonated)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "3.75"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Desserts",
+  "jp": "デザート",
+  "group": "Drinks, Desserts & Sides",
+  "order": 52,
+  "note": "",
+  "items": [
+   {
+    "name": "Tempura Banana",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Mochi Ice Cream (2)",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Thai Donuts",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.95"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ },
+ {
+  "category": "Side Order",
+  "jp": "お供",
+  "group": "Drinks, Desserts & Sides",
+  "order": 53,
+  "note": "",
+  "items": [
+   {
+    "name": "Brown Rice",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Fried Rice or Fried Noodle",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "6.95"
+     },
+     {
+      "label": "S",
+      "amount": "4.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steamed Rice",
+    "desc": "",
+    "prices": [
+     {
+      "label": "L",
+      "amount": "4.50"
+     },
+     {
+      "label": "S",
+      "amount": "3.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "French Fries",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "3.95"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Crispy Noodles",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "1.00"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Sushi Rice",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "4.50"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Chicken",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.25"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Steak",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Shrimp",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "6.75"
+     }
+    ],
+    "spicy": false
+   },
+   {
+    "name": "Teriyaki Vegetables",
+    "desc": "",
+    "prices": [
+     {
+      "label": "",
+      "amount": "5.99"
+     }
+    ],
+    "spicy": false
+   }
+  ]
+ }
+];
