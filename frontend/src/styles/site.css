@@ -1711,3 +1711,119 @@ mark {
   .menu-item-actions { width: 100%; justify-content: flex-end; }
   .menu-item-row .leader { display: none; }
 }
+
+/* ==========================================================================
+   Photo-free additions: story kanji panel + house-favorites band
+   ========================================================================== */
+
+.story-panel {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(199, 62, 45, 0.08), transparent 55%),
+    var(--washi-2);
+  border: 1px solid var(--line);
+  outline: 1.5px solid var(--gold);
+  outline-offset: 10px;
+  margin: 12px;
+  box-shadow: var(--shadow);
+}
+
+.story-panel-kanji {
+  font-family: var(--font-display);
+  font-size: clamp(120px, 18vw, 200px);
+  line-height: 1;
+  color: var(--shu);
+  text-shadow: 0 2px 24px rgba(199, 62, 45, 0.25);
+}
+
+.story-panel-reading {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.5em;
+  color: var(--sumi-2);
+}
+
+.story-panel-caption {
+  font-size: 11.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* house favorites */
+.fav-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 40px;
+}
+
+@media (max-width: 760px) {
+  .fav-grid { grid-template-columns: 1fr; }
+}
+
+.fav-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 18px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.fav-kanji {
+  flex: none;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--washi);
+  background: var(--shu);
+  border-radius: 4px;
+  box-shadow: 0 6px 14px -6px rgba(160, 44, 29, 0.5);
+}
+
+.fav-body { flex: 1; }
+
+.fav-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.fav-row h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.fav-row .spicy { color: var(--shu); font-size: 12px; margin-left: 5px; }
+
+.fav-row .leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--line);
+  transform: translateY(-3px);
+  min-width: 16px;
+}
+
+.fav-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.fav-body p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin-top: 3px;
+  max-width: 52ch;
+}
+
+.fav-more { text-align: center; margin-top: 36px; }

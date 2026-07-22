@@ -38,7 +38,7 @@ export default function Footer() {
             <ul>
               <li><Link to="/menu">Full Menu</Link></li>
               <li><Link to="/#location">Hours &amp; Location</Link></li>
-              <li><Link to="/#gallery">Gallery</Link></li>
+              <li><Link to="/#favorites">House Favorites</Link></li>
             </ul>
           </div>
         </div>

@@ -24,16 +24,19 @@ const SPECIALTIES = [
     cta: "Build a bowl",
   },
   {
-    kanji: "麺", title: "Noodles & Kitchen", link: "/menu#cat-yaki-udon-yaki-soba",
+    kanji: "麺", title: "Noodles & Kitchen", link: "/menu#cat-yaki-udon",
     text: "Yaki udon, noodle soups, teriyaki, katsu and wok classics like General Tso's chicken.",
     cta: "See noodles",
   },
 ];
 
-const GALLERY = [
-  { src: "/assets/img/oec-storefront-day.jpg", caption: "Find us on 66th Street", alt: "O.E.C. Japanese Express storefront at 2438 66th St N" },
-  { src: "/assets/img/chicken-noodle-soup.jpg", caption: "Chicken noodle soup off the wok", alt: "Bowl of chicken noodle soup with egg and carrots" },
-  { src: "/assets/img/oec-storefront-night.jpg", caption: "Open late Fri & Sat", alt: "O.E.C. neon sign lit up at night" },
+const FAVORITES = [
+  { name: "Mars Roll", jp: "火星", price: "13.50", desc: "Crunchy spicy crawfish inside, topped with tuna and salmon", spicy: true },
+  { name: "Tiger Roll", jp: "虎", price: "14.95", desc: "Tuna, crab, avocado and masago, topped with salmon, eel, crunch and scallion" },
+  { name: "Phoenix Roll", jp: "鳳凰", price: "14.95", desc: "Tempura shrimp, escolar and seaweed salad, topped with tuna and salmon in soy paper" },
+  { name: "White Swan Roll", jp: "白鳥", price: "12.95", desc: "Spicy salmon and tempura flakes, topped with peppered escolar and masago", spicy: true },
+  { name: "Tornado Roll", jp: "竜巻", price: "12.50", desc: "Tempura shrimp and cream cheese, topped with krab meat and eel sauce" },
+  { name: "Funky Monkey Roll", jp: "猿", price: "6.95", desc: "Eel and banana with eel sauce and yum yum sauce" },
 ];
 
 export default function Home() {
@@ -122,14 +125,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <figure className="story-figure">
-            <img
-              src="/assets/img/oec-storefront-dusk.jpg"
-              alt="O.E.C. Japanese Express storefront at dusk, neon sign glowing"
-              loading="lazy"
-            />
-            <figcaption lang="ja">店構え</figcaption>
-          </figure>
+          <div className="story-panel" aria-hidden="true">
+            <span className="story-panel-kanji" lang="ja">縁</span>
+            <span className="story-panel-reading" lang="ja">えん — おいしい縁</span>
+            <span className="story-panel-caption">Delicious connections · est. 2011</span>
+          </div>
         </div>
       </section>
 
@@ -156,21 +156,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Gallery ── */}
-      <section className="section" id="gallery">
+      {/* ── House favorites ── */}
+      <section className="section" id="favorites">
         <div className="wrap">
           <div className="section-head center">
-            <p className="section-kicker" lang="ja">写真</p>
-            <h2 className="section-title">From the pass</h2>
+            <p className="section-kicker" lang="ja">人気の巻き</p>
+            <h2 className="section-title">House favorite rolls</h2>
+            <p className="section-sub">
+              Six specials our regulars keep coming back for — all made to order
+              at the sushi bar.
+            </p>
           </div>
-          <div className="gallery">
-            {GALLERY.map((g) => (
-              <figure key={g.src}>
-                <img src={g.src} alt={g.alt} loading="lazy" />
-                <figcaption>{g.caption}</figcaption>
-              </figure>
+          <div className="fav-grid">
+            {FAVORITES.map((f) => (
+              <article className="fav-item" key={f.name}>
+                <span className="fav-kanji" lang="ja" aria-hidden="true">{f.jp}</span>
+                <div className="fav-body">
+                  <div className="fav-row">
+                    <h3>
+                      {f.name}
+                      {f.spicy && (
+                        <span className="spicy" title="Spicy" aria-label="Spicy">🌶</span>
+                      )}
+                    </h3>
+                    <span className="leader" aria-hidden="true" />
+                    <span className="fav-price">${f.price}</span>
+                  </div>
+                  <p>{f.desc}</p>
+                </div>
+              </article>
             ))}
           </div>
+          <p className="fav-more">
+            <Link className="btn btn-ghost" to="/menu#cat-sushi-special-roll">
+              See all 34 special rolls
+            </Link>
+          </p>
         </div>
       </section>
 
