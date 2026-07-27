@@ -90,6 +90,7 @@ def clean_name(section, name):
         name = "Any Two Rolls"
     name = re.sub(r"\(\s+", "(", name)
     name = re.sub(r"\s+\)", ")", name)
+    name = re.sub(r"(?<=[a-z])\(", " (", name)   # "Tea(unsweetened)" -> "Tea (unsweetened)"
     # normalize sentence-case oddities like "krab"
     if name and name[0].islower():
         name = name[0].upper() + name[1:]

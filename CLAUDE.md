@@ -21,6 +21,8 @@ Single location — do not add or reference the former Largo location.
 - Backend: `cd backend && venv/Scripts/python main.py` (port 5000);
   seed with `venv/Scripts/python scripts/seed.py` (idempotent; safe to rerun —
   orders survive, menu is wiped and reloaded from `scripts/menu_seed.json`).
+- Tests: `cd backend && venv/Scripts/python -m pytest` (12 API-contract tests
+  in `tests/`; uses a throwaway SQLite DB, never touches `oec.db`).
 - Frontend: `cd frontend && npm run dev` (port 5173, proxies `/api` to 5000).
 
 ## Domain rules

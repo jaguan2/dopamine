@@ -1046,6 +1046,8 @@ a:hover { color: var(--shu-deep); }
 
 .menu-group-title:first-child { margin-top: 0; }
 
+.menu-group-title { scroll-margin-top: 150px; }
+
 .menu-group-title .jp {
   font-size: 15px;
   letter-spacing: 0.4em;
@@ -1053,7 +1055,7 @@ a:hover { color: var(--shu-deep); }
   white-space: nowrap;
 }
 
-.menu-category { padding-top: 34px; }
+.menu-category { padding-top: 34px; scroll-margin-top: 150px; }
 
 .menu-category-head {
   display: flex;
@@ -1666,8 +1668,17 @@ mark {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
   font-family: var(--font-display);
   font-size: 17px;
+}
+
+.order-age {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  white-space: nowrap;
 }
 
 .status-pill {

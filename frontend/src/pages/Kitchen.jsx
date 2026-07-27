@@ -11,6 +11,14 @@ const NEXT_LABEL = {
   ready: "Complete",
 };
 
+function age(iso) {
+  const mins = Math.max(0, Math.round((Date.now() - new Date(iso)) / 60000));
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins} min ago`;
+  const h = Math.floor(mins / 60);
+  return `${h}h ${mins % 60}m ago`;
+}
+
 export default function Kitchen() {
   const [key, setKey] = useState(() => sessionStorage.getItem("oec-kitchen-key") || "");
   const [entered, setEntered] = useState(Boolean(key));
@@ -116,6 +124,7 @@ export default function Kitchen() {
             <article key={o.id} className={`kitchen-card status-${o.status}`}>
               <header>
                 <strong>{o.order_code}</strong>
+                <span className="order-age">{age(o.created_at)}</span>
                 <span className={`status-pill ${o.status}`}>{o.status}</span>
               </header>
               <p className="kitchen-meta">

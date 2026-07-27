@@ -72,7 +72,11 @@ export default function OrderStatus() {
         <p className="section-sub">
           Order <strong>{order.order_code}</strong> ·{" "}
           {order.fulfillment === "delivery" ? "Delivery" : "Pickup"} at{" "}
-          {order.location}. Keep this page — it updates as the kitchen works.
+          {order.location} · placed{" "}
+          {new Date(order.created_at).toLocaleTimeString([], {
+            hour: "numeric", minute: "2-digit",
+          })}
+          . Keep this page — it updates as the kitchen works.
         </p>
       </div>
 

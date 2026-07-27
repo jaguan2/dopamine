@@ -39,6 +39,13 @@ npm run dev
 Open http://localhost:5173 — the kitchen dashboard is at `/kitchen`
 (default key `oec-kitchen`; change via `KITCHEN_KEY` in `backend/.env`).
 
+Tests (12 API-contract tests, throwaway DB):
+
+```
+cd backend
+venv\Scripts\python -m pytest
+```
+
 ## How it fits together
 
 ```
