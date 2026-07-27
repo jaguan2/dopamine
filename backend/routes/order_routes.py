@@ -50,11 +50,11 @@ def _kitchen_authorized():
 
 @order_bp.route("/orders", methods=["POST"])
 @rate_limit(10, 60, "create_order",
-            message="Too many orders from this device — please wait a minute "
+            message="Too many orders from this device. Please wait a minute "
                     "or call us at 727-345-4088.")
 def create_order():
     """
-    Place an order (no payment — settled at pickup/delivery).
+    Place an order (no payment; settled at pickup/delivery).
     POST /api/orders
     {
       "location_id": 1,
@@ -96,7 +96,7 @@ def create_order():
         if len(raw_items) > MAX_LINES:
             return jsonify(error="Too many lines in one order."), 400
 
-        # Resolve every line against the database first — prices, names and
+        # Resolve every line against the database first: prices, names and
         # availability all come from PRICE_OPTION, never from the client.
         line_specs = []
         subtotal = 0

@@ -74,7 +74,7 @@ export default function Kitchen() {
         <div className="page-head">
           <p className="section-kicker" lang="ja">台所</p>
           <h1 className="section-title">Kitchen</h1>
-          <p className="section-sub">Staff only — enter the kitchen key.</p>
+          <p className="section-sub">Staff only. Enter the kitchen key.</p>
         </div>
         <form
           className="kitchen-key-form"
@@ -138,7 +138,7 @@ export default function Kitchen() {
                     {it.quantity} × {it.item_name}
                     {it.price_label && ` (${it.price_label})`}
                     {it.instructions && (
-                      <em className="line-instructions"> — {it.instructions}</em>
+                      <em className="line-instructions"> ({it.instructions})</em>
                     )}
                   </li>
                 ))}

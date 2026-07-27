@@ -10,7 +10,7 @@ export default function NotFound() {
         <span className="jp" lang="ja">迷子</span>
         <h1>This page wandered off</h1>
         <p>
-          Nothing lives at <code>{pathname}</code> — but the sushi bar is still
+          Nothing lives at <code>{pathname}</code>, but the sushi bar is still
           open.
         </p>
         <div className="notfound-actions">

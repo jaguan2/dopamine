@@ -11,7 +11,7 @@ def get_locations():
     Get both restaurant locations with hours and contact info.
     GET /api/locations
 
-    Public reference data — no authentication required.
+    Public reference data; no authentication required.
     """
     try:
         locations = Location.query.order_by(Location.id).all()

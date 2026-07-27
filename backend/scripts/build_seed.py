@@ -1,6 +1,6 @@
 # scripts/build_seed.py
 #
-# Builds menu_seed.json from menupages_menu.json — the restaurant's official
+# Builds menu_seed.json from menupages_menu.json, the restaurant's official
 # online-ordering menu (Grubhub restaurant 560075, the same feed behind
 # oecjapaneseexpress.dine.online), scraped from Menupages July 2026.
 #
@@ -78,7 +78,7 @@ PIECE_PREFIX = re.compile(r"^\d+\s*Piece\s+", re.I)
 COURSE_SUFFIX = re.compile(r"\s*\((Lunch|Dinner|L|D)\)\s*$", re.I)
 HIBACHI_INFIX = re.compile(r"\s*Hibachi\s*", re.I)
 
-# The upstream feed carries bidi/zero-width control characters — some as raw
+# The upstream feed carries bidi/zero-width control characters: some as raw
 # codepoints, some as literal "&#8207;" entities that would otherwise render
 # as visible text. Unescape first, then strip whatever marks fall out.
 INVISIBLE = re.compile(
@@ -118,7 +118,7 @@ def clean_name(section, name):
 def clean_desc(section, name, desc):
     desc = _scrub(desc)
     if section == "Sushi Lunch Special":
-        desc = ("Choose from 30 classic rolls — vegetable, cucumber, avocado, krab, "
+        desc = ("Choose from 30 classic rolls: vegetable, cucumber, avocado, krab, "
                 "crunch, asparagus, sweet potato, California, salmon skin, tuna, "
                 "salmon, Philly, spicy krab, Alaskan, calamari, Boston, fancy, eel, "
                 "spicy tuna, crunch krab, snow crab, spicy salmon, crawfish, eel "
@@ -164,15 +164,15 @@ def run():
         "note": "In-store special. All poke bowls come w. krab, cucumber, seaweed "
                 "salad, sesame seeds. Choose your base, fish, sauce and toppings.",
         "items": [
-            {"name": "Poke Bowl — Two Scoop Fish", "desc": "",
+            {"name": "Two Scoop Poke Bowl", "desc": "",
              "prices": [{"label": "", "amount": "10.99"}], "spicy": False},
-            {"name": "Poke Bowl — Three Scoop Fish", "desc": "",
+            {"name": "Three Scoop Poke Bowl", "desc": "",
              "prices": [{"label": "", "amount": "12.99"}], "spicy": False},
         ],
     })
     cats.append({
         "category": "Sake, Beer & Wine", "jp": "酒", "group": "Drinks & Sides", "order": 62,
-        "note": "Dine-in — ask for today's selection.",
+        "note": "Dine-in only. Ask for today's selection.",
         "items": [
             {"name": "House Sake (Small)", "desc": "",
              "prices": [{"label": "", "amount": "4.99"}], "spicy": False},

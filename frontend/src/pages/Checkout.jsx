@@ -78,7 +78,7 @@ export default function Checkout() {
         <p className="section-kicker" lang="ja">お会計</p>
         <h1 className="section-title">Check Out</h1>
         <p className="section-sub">
-          No payment online — settle up when you collect your order.
+          No payment online. Settle up when you collect your order.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default function Checkout() {
           {deliveryBlocked && (
             <p className="form-error" role="alert">
               Delivery orders need a ${(DELIVERY_MIN_CENTS / 100).toFixed(2)}{" "}
-              subtotal — add {fmt(DELIVERY_MIN_CENTS - subtotalCents)} more, or
+              subtotal. Add {fmt(DELIVERY_MIN_CENTS - subtotalCents)} more, or
               switch to pickup.
             </p>
           )}
@@ -161,7 +161,7 @@ export default function Checkout() {
             className="btn btn-primary btn-block"
             disabled={submitting || deliveryBlocked}
           >
-            {submitting ? "Placing order…" : `Place Order — ${fmt(totalCents)}`}
+            {submitting ? "Placing order…" : `Place Order · ${fmt(totalCents)}`}
           </button>
         </form>
 

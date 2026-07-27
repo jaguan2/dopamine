@@ -32,7 +32,7 @@ LOCATIONS = [
     dict(
         slug="st-pete",
         name="O.E.C. Japanese Express",
-        tagline="St. Petersburg — call in · take out · dine in",
+        tagline="St. Petersburg · call in · take out · dine in",
         street="2438 66th St North",
         city="St. Petersburg", state="FL", postal_code="33710",
         phone="727-345-4088",
@@ -43,7 +43,7 @@ LOCATIONS = [
         ]),
         accepts_delivery=True,
         legacy_order_url="https://oecjapaneseexpress.dine.online/locations/560075?fulfillment=pickup",
-        note="We deliver — $15.00 minimum, pre-tax.",
+        note="We deliver. $15.00 minimum, pre-tax.",
     ),
 ]
 

@@ -76,7 +76,7 @@ export default function OrderStatus() {
           {new Date(order.created_at).toLocaleTimeString([], {
             hour: "numeric", minute: "2-digit",
           })}
-          . Keep this page — it updates as the kitchen works.
+          . Keep this page; it updates as the kitchen works.
         </p>
       </div>
 
@@ -106,7 +106,7 @@ export default function OrderStatus() {
                   {it.quantity} × {it.item_name}
                   {it.price_label && <span className="plabel"> ({it.price_label})</span>}
                   {it.instructions && (
-                    <span className="line-instructions"> — {it.instructions}</span>
+                    <span className="line-instructions"> ({it.instructions})</span>
                   )}
                 </span>
                 <span className="cart-line-price">{fmt(it.line_total_cents)}</span>
@@ -120,7 +120,7 @@ export default function OrderStatus() {
           <div className="grand"><dt>Total due</dt><dd>{fmt(order.total_cents)}</dd></div>
         </dl>
         <p className="cart-tax-note">
-          Pay at {order.fulfillment === "delivery" ? "the door" : "pickup"} —
+          Pay at {order.fulfillment === "delivery" ? "the door" : "pickup"},
           cash or card. Questions? Call{" "}
           <a href="tel:+17273454088">727-345-4088</a>.
         </p>

@@ -249,7 +249,7 @@ a:hover { color: var(--shu-deep); }
   overflow: hidden;
 }
 
-/* hinomaru — brushed vermilion sun */
+/* hinomaru: brushed vermilion sun */
 .hero::before {
   content: "";
   position: absolute;

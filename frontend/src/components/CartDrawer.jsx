@@ -39,7 +39,7 @@ export default function CartDrawer() {
         {lines.length === 0 ? (
           <div className="cart-empty">
             <span className="jp" lang="ja">空</span>
-            <p>Your cart is empty — the menu awaits.</p>
+            <p>Your cart is empty. The menu awaits.</p>
             <button className="btn btn-ghost" onClick={() => { setDrawerOpen(false); navigate("/menu"); }}>
               Browse the Menu
             </button>

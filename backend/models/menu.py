@@ -1,6 +1,6 @@
 # models/menu.py
 #
-# CATEGORY / MENU_ITEM / PRICE_OPTION — the menu itself.
+# CATEGORY / MENU_ITEM / PRICE_OPTION: the menu itself.
 #
 # Design notes:
 # - CATEGORY.group_name is the top-level menu-page grouping ("Sushi Bar",

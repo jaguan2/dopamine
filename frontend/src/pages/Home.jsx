@@ -5,7 +5,7 @@ import api from "../lib/api.js";
 const SPECIALTIES = [
   {
     kanji: "鮨", title: "Sushi Bar", link: "/menu#group-sushi-bar",
-    text: "Nigiri, sashimi and more than eighty rolls — classic cuts to special creations like the Dancing Eel and Volcano.",
+    text: "Nigiri, sashimi and more than eighty rolls, from classic cuts to special creations like the Dancing Eel and Volcano.",
     cta: "See the rolls",
   },
   {
@@ -15,7 +15,7 @@ const SPECIALTIES = [
   },
   {
     kanji: "弁", title: "Bento & Lunch Specials", link: "/menu#group-bento-lunch",
-    text: "Lunch bento for $13.50 with California roll, salad, rice and shumai — plus any two classic rolls for $8.99, Mon–Sat.",
+    text: "Lunch bento for $13.50 with California roll, salad, rice and shumai, plus any two classic rolls for $8.99, Mon–Sat.",
     cta: "See lunch",
   },
   {
@@ -60,7 +60,7 @@ export default function Home() {
           </h1>
           <p className="hero-tag">
             Family-run Japanese kitchen serving hand-rolled sushi, sizzling
-            hibachi, bento boxes and poke bowls — made to order, every day but
+            hibachi, bento boxes and poke bowls. Made to order, every day but
             Tuesday.
             <span className="jp" lang="ja">寿司・鉄板焼・弁当・ポケ丼</span>
           </p>
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
         </div>
         <p className="hero-vertical" lang="ja" aria-hidden="true">
-          おいしい えん — 美味しい縁
+          おいしい えん・美味しい縁
         </p>
         <div
           className="seigaiha-band"
@@ -107,7 +107,7 @@ export default function Home() {
               the day, fish cut to order, vegetables from the morning delivery.
             </p>
             <p>
-              The menu runs deep — from a $3.75 egg roll to sushi paradise
+              The menu runs deep, from a $3.75 egg roll to sushi paradise
               platters for two. Come hungry, leave happy.
             </p>
             <div className="story-points" role="list">
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
           <div className="story-panel" aria-hidden="true">
             <span className="story-panel-kanji" lang="ja">縁</span>
-            <span className="story-panel-reading" lang="ja">えん — おいしい縁</span>
+            <span className="story-panel-reading" lang="ja">えん・おいしい縁</span>
             <span className="story-panel-caption">Delicious connections · est. 2011</span>
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
             <p className="section-kicker" lang="ja">お品書き</p>
             <h2 className="section-title">From our kitchen</h2>
             <p className="section-sub">
-              Five ways to eat well at O.E.C. — every one made to order.
+              Five ways to eat well at O.E.C., every one made to order.
             </p>
           </div>
           <div className="cards">
@@ -163,7 +163,7 @@ export default function Home() {
             <p className="section-kicker" lang="ja">人気の巻き</p>
             <h2 className="section-title">House favorite rolls</h2>
             <p className="section-sub">
-              Six specials our regulars keep coming back for — all made to order
+              Six specials our regulars keep coming back for, all made to order
               at the sushi bar.
             </p>
           </div>
@@ -203,8 +203,8 @@ export default function Home() {
           <h2>Dinner is a phone call away</h2>
           <p>
             Order online for pickup or delivery, or call us directly.
-            Delivery from a $15 minimum, before tax. Pay when you pick up —
-            no card required online.
+            Delivery from a $15 minimum, before tax. Pay when you pick up.
+            No card required online.
           </p>
           <p className="hours-note">Open every day except Tuesday</p>
           <div className="actions">
@@ -228,7 +228,7 @@ export default function Home() {
               <p className="loc-jp" lang="ja">セントピーターズバーグ</p>
               <h3>{location ? location.name : "O.E.C. Japanese Express"}</h3>
               <p className="loc-sub">
-                {location ? location.tagline : "St. Petersburg — call in · take out · dine in"}
+                {location ? location.tagline : "St. Petersburg · call in · take out · dine in"}
               </p>
               <div className="loc-lines">
                 <div className="loc-line">
@@ -278,7 +278,7 @@ export default function Home() {
                 <a className="btn btn-ghost" href="tel:+17273454088">Call to Order</a>
               </div>
               <p className="loc-note">
-                {location ? location.note : "We deliver — $15.00 minimum, pre-tax."}
+                {location ? location.note : "We deliver. $15.00 minimum, pre-tax."}
               </p>
             </article>
           </div>

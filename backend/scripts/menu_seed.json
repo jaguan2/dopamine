@@ -2240,7 +2240,7 @@
   "note": "In-store special. All poke bowls come w. krab, cucumber, seaweed salad, sesame seeds. Choose your base, fish, sauce and toppings.",
   "items": [
    {
-    "name": "Poke Bowl — Two Scoop Fish",
+    "name": "Two Scoop Poke Bowl",
     "desc": "",
     "prices": [
      {
@@ -2251,7 +2251,7 @@
     "spicy": false
    },
    {
-    "name": "Poke Bowl — Three Scoop Fish",
+    "name": "Three Scoop Poke Bowl",
     "desc": "",
     "prices": [
      {
@@ -3214,7 +3214,7 @@
   "items": [
    {
     "name": "Any Two Rolls",
-    "desc": "Choose from 30 classic rolls — vegetable, cucumber, avocado, krab, crunch, asparagus, sweet potato, California, salmon skin, tuna, salmon, Philly, spicy krab, Alaskan, calamari, Boston, fancy, eel, spicy tuna, crunch krab, snow crab, spicy salmon, crawfish, eel avocado, peanut avocado, tuna cucumber, yasai, salmon cheese, salmon avocado, banana",
+    "desc": "Choose from 30 classic rolls: vegetable, cucumber, avocado, krab, crunch, asparagus, sweet potato, California, salmon skin, tuna, salmon, Philly, spicy krab, Alaskan, calamari, Boston, fancy, eel, spicy tuna, crunch krab, snow crab, spicy salmon, crawfish, eel avocado, peanut avocado, tuna cucumber, yasai, salmon cheese, salmon avocado, banana",
     "prices": [
      {
       "label": "",
@@ -3402,7 +3402,7 @@
   "jp": "酒",
   "group": "Drinks & Sides",
   "order": 62,
-  "note": "Dine-in — ask for today's selection.",
+  "note": "Dine-in only. Ask for today's selection.",
   "items": [
    {
     "name": "House Sake (Small)",

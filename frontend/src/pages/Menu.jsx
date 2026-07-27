@@ -124,7 +124,7 @@ export default function Menu() {
     const jump = () => document.getElementById(hash)?.scrollIntoView();
     jump();
     // Display fonts land after first paint and reflow the list, which drags
-    // the target out from under the viewport — re-anchor once they're in.
+    // the target out from under the viewport; re-anchor once they're in.
     document.fonts?.ready.then(jump);
   }, [menu]);
 
@@ -145,7 +145,7 @@ export default function Menu() {
           <h1>The Menu</h1>
           <p>
             {totalItems || "Over 280"} dishes, one standard: made when you
-            order it. Add to your cart and pay at pickup or delivery — no card
+            order it. Add to your cart and pay at pickup or delivery. No card
             needed online.
           </p>
         </div>
@@ -252,7 +252,7 @@ export default function Menu() {
           {menu && q && filtered.length === 0 && (
             <div className="menu-empty" style={{ display: "block" }}>
               <span className="jp" lang="ja">見つかりません</span>
-              No dishes match your search — try another word, or clear the search.
+              No dishes match your search. Try another word, or clear the search.
             </div>
           )}
 

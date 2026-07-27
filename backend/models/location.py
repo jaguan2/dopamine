@@ -1,11 +1,11 @@
 # models/location.py
 #
-# LOCATION — restaurant location(s). Currently one row (St. Petersburg);
+# LOCATION: restaurant location(s). Currently one row (St. Petersburg);
 # kept as a table so a second location is a seed entry, not a migration.
 #
 # Design notes:
 # - hours_json holds the display schedule as a JSON list of {days, hours}
-#   rows rather than normalized columns — the site only ever renders it.
+#   rows rather than normalized columns; the site only ever renders it.
 # - accepts_delivery: St. Pete delivers ($15 min, pre-tax).
 # - legacy_order_url points at the location's existing third-party ordering
 #   page (dine.online) so the site can fall back to it.

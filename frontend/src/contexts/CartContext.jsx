@@ -46,7 +46,7 @@ export function CartProvider({ children }) {
   }
 
   // One note per line. Ordering the same dish twice with different notes
-  // isn't expressible — the kitchen reads the order-level notes for that.
+  // isn't expressible; the kitchen reads the order-level notes for that.
   function setInstructions(priceOptionId, text) {
     setLines((prev) =>
       prev.map((l) =>

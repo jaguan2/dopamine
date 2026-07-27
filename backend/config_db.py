@@ -29,6 +29,6 @@ db = SQLAlchemy(app)
 TAX_RATE = float(os.getenv("TAX_RATE", "0.07"))
 # Delivery minimum enforced by the restaurant (pre-tax).
 DELIVERY_MINIMUM = float(os.getenv("DELIVERY_MINIMUM", "15.00"))
-# Shared secret for the kitchen dashboard endpoints (no full auth system —
+# Shared secret for the kitchen dashboard endpoints (no full auth system:
 # staff enter this key once in the kitchen view).
 KITCHEN_KEY = os.getenv("KITCHEN_KEY", "oec-kitchen")

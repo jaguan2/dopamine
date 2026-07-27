@@ -1,6 +1,6 @@
 # models/order.py
 #
-# ORDER / ORDER_ITEM — customer orders (everything but payment).
+# ORDER / ORDER_ITEM: customer orders (everything but payment).
 #
 # Design notes:
 # - order_code is the short public handle (e.g. "OEC-7F3K9Q") customers use
@@ -9,7 +9,7 @@
 #   later menu edits never rewrite an existing order's history.
 # - status flow: received -> confirmed -> ready -> completed, or cancelled.
 # - All money is cents (Integer). Totals are computed server-side from
-#   PRICE_OPTION rows — the client's displayed prices are never trusted.
+#   PRICE_OPTION rows; the client's displayed prices are never trusted.
 #
 from datetime import datetime, timezone
 from config_db import db

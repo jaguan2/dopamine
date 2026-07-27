@@ -4,7 +4,7 @@
 #
 # Deliberately dependency-free and per-process: this app runs as a single
 # Flask process serving one kitchen. If it is ever run with multiple workers,
-# move this to a shared backend (Redis / flask-limiter) — per-process counters
+# move this to a shared backend (Redis / flask-limiter); per-process counters
 # would otherwise hand each worker its own quota.
 #
 # Client identity is `request.remote_addr`. Behind a reverse proxy that is the
@@ -65,7 +65,7 @@ def rate_limit(limit, window_seconds, scope, message=None):
     """
     Reject callers who exceed `limit` requests per `window_seconds`.
 
-    Returns 429 with a plain error body — the frontend surfaces it the same
+    Returns 429 with a plain error body; the frontend surfaces it the same
     way as any other 4xx from the API.
     """
     def decorator(fn):
@@ -74,7 +74,7 @@ def rate_limit(limit, window_seconds, scope, message=None):
             key = f"{scope}:{request.remote_addr or 'unknown'}"
             if not limiter.check(key, limit, window_seconds):
                 return jsonify(
-                    error=message or "Too many requests — please wait a moment."
+                    error=message or "Too many requests. Please wait a moment."
                 ), 429
             return fn(*args, **kwargs)
         return wrapper
