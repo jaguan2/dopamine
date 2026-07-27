@@ -98,23 +98,84 @@ def test_kitchen_requires_key(client):
     assert client.get("/api/kitchen/orders", headers=KEY).status_code == 200
 
 
+def _place(client, **over):
+    """Place an order and return its kitchen-side id."""
+    code = client.post("/api/orders", json=_order_payload(**over)).json["order_code"]
+    orders = client.get("/api/kitchen/orders?all=1", headers=KEY).json
+    return next(o["id"] for o in orders if o["order_code"] == code)
+
+
 def test_kitchen_status_flow(client):
-    client.post("/api/orders", json=_order_payload())
-    orders = client.get("/api/kitchen/orders", headers=KEY).json
-    assert orders and "customer_name" in orders[0]
-    oid = orders[0]["id"]
+    oid = _place(client)
+    for step in ("confirmed", "ready", "completed"):
+        res = client.patch(f"/api/kitchen/orders/{oid}/status",
+                           json={"status": step}, headers=KEY)
+        assert res.status_code == 200, res.json
+        assert res.json["status"] == step
 
-    res = client.patch(f"/api/kitchen/orders/{oid}/status",
-                       json={"status": "confirmed"}, headers=KEY)
-    assert res.json["status"] == "confirmed"
+    open_ids = [o["id"] for o in
+                client.get("/api/kitchen/orders", headers=KEY).json]
+    assert oid not in open_ids  # completed orders leave the open queue
 
+
+def test_unknown_status_rejected(client):
+    oid = _place(client)
     res = client.patch(f"/api/kitchen/orders/{oid}/status",
                        json={"status": "nonsense"}, headers=KEY)
     assert res.status_code == 400
 
+
+def test_status_cannot_skip_a_step(client):
+    oid = _place(client)
     res = client.patch(f"/api/kitchen/orders/{oid}/status",
                        json={"status": "completed"}, headers=KEY)
+    assert res.status_code == 409
+    assert "received" in res.json["error"]
+
+
+def test_status_cannot_reverse_once_terminal(client):
+    oid = _place(client)
+    for step in ("confirmed", "ready", "completed"):
+        client.patch(f"/api/kitchen/orders/{oid}/status",
+                     json={"status": step}, headers=KEY)
+    res = client.patch(f"/api/kitchen/orders/{oid}/status",
+                       json={"status": "received"}, headers=KEY)
+    assert res.status_code == 409
+
+
+def test_order_can_be_cancelled_midway(client):
+    oid = _place(client)
+    client.patch(f"/api/kitchen/orders/{oid}/status",
+                 json={"status": "confirmed"}, headers=KEY)
+    res = client.patch(f"/api/kitchen/orders/{oid}/status",
+                       json={"status": "cancelled"}, headers=KEY)
     assert res.status_code == 200
-    open_ids = [o["id"] for o in
-                client.get("/api/kitchen/orders", headers=KEY).json]
-    assert oid not in open_ids  # completed orders leave the open queue
+    assert res.json["status"] == "cancelled"
+
+
+def test_repeating_current_status_is_a_noop(client):
+    oid = _place(client)
+    res = client.patch(f"/api/kitchen/orders/{oid}/status",
+                       json={"status": "received"}, headers=KEY)
+    assert res.status_code == 200
+
+
+def test_per_item_instructions_are_stored(client):
+    res = client.post("/api/orders", json=_order_payload(
+        items=[{"price_option_id": 1, "quantity": 1,
+                "instructions": "no salt please"}]))
+    assert res.json["items"][0]["instructions"] == "no salt please"
+
+
+def test_order_codes_are_unique_across_a_burst(client):
+    codes = {client.post("/api/orders", json=_order_payload()).json["order_code"]
+             for _ in range(8)}
+    assert len(codes) == 8
+
+
+def test_rate_limit_blocks_a_flood(client):
+    # The limiter allows 10 orders per minute per client.
+    statuses = [client.post("/api/orders", json=_order_payload()).status_code
+                for _ in range(12)]
+    assert statuses.count(201) == 10
+    assert statuses[-1] == 429

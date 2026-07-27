@@ -120,10 +120,22 @@ export default function Menu() {
   useEffect(() => {
     if (!menu) return;
     const hash = window.location.hash.slice(1);
-    if (hash) document.getElementById(hash)?.scrollIntoView();
+    if (!hash) return;
+    const jump = () => document.getElementById(hash)?.scrollIntoView();
+    jump();
+    // Display fonts land after first paint and reflow the list, which drags
+    // the target out from under the viewport — re-anchor once they're in.
+    document.fonts?.ready.then(jump);
   }, [menu]);
 
   const totalItems = menu ? menu.reduce((n, c) => n + c.items.length, 0) : 0;
+
+  // The rail tracks the visible category; the chips track its parent group.
+  const activeGroup = useMemo(() => {
+    if (!activeCat || !menu) return null;
+    const cat = menu.find((c) => `cat-${slug(c.name)}` === activeCat);
+    return cat ? cat.group : null;
+  }, [activeCat, menu]);
 
   return (
     <main>
@@ -162,7 +174,14 @@ export default function Menu() {
           </div>
           <nav className="group-chips" aria-label="Menu sections">
             {groups.map((g) => (
-              <a key={g.name} href={`#group-${slug(g.name)}`}>{g.name}</a>
+              <a
+                key={g.name}
+                href={`#group-${slug(g.name)}`}
+                className={activeGroup === g.name ? "active" : undefined}
+                aria-current={activeGroup === g.name ? "true" : undefined}
+              >
+                {g.name}
+              </a>
             ))}
           </nav>
         </div>

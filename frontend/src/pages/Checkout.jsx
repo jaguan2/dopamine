@@ -3,12 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../lib/api.js";
 import { useCart } from "../contexts/CartContext.jsx";
 import { fmt } from "../lib/money.js";
+import CartLine from "../components/CartLine.jsx";
 
 const TAX_RATE = 0.07;            // display estimate; server recomputes
 const DELIVERY_MIN_CENTS = 1500;  // $15.00 pre-tax
 
 export default function Checkout() {
-  const { lines, setQty, subtotalCents, clear } = useCart();
+  const { lines, subtotalCents, clear } = useCart();
   const navigate = useNavigate();
 
   const [location, setLocation] = useState(null);
@@ -47,6 +48,7 @@ export default function Checkout() {
         items: lines.map((l) => ({
           price_option_id: l.price_option_id,
           quantity: l.quantity,
+          instructions: l.instructions || "",
         })),
       });
       clear();
@@ -167,26 +169,7 @@ export default function Checkout() {
           <h2>Your Order <span className="jp" lang="ja">ご注文</span></h2>
           <ul className="cart-lines">
             {lines.map((l) => (
-              <li key={l.price_option_id} className="cart-line">
-                <div className="cart-line-info">
-                  <span className="cart-line-name">
-                    {l.item_name}
-                    {l.price_label && <span className="plabel"> ({l.price_label})</span>}
-                  </span>
-                  <span className="cart-line-price">
-                    {fmt(l.unit_price_cents * l.quantity)}
-                  </span>
-                </div>
-                <div className="qty-stepper">
-                  <button type="button"
-                    onClick={() => setQty(l.price_option_id, l.quantity - 1)}
-                    aria-label={`Remove one ${l.item_name}`}>−</button>
-                  <span>{l.quantity}</span>
-                  <button type="button"
-                    onClick={() => setQty(l.price_option_id, l.quantity + 1)}
-                    aria-label={`Add one ${l.item_name}`}>+</button>
-                </div>
-              </li>
+              <CartLine key={l.price_option_id} line={l} />
             ))}
           </ul>
           <dl className="totals">

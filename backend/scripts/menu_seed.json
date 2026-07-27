@@ -1448,7 +1448,7 @@
    },
    {
     "name": "6 Piece Spider Roll",
-    "desc": "Soft shell&#8207; crab, cucumber, avocado, masago and eel sauce inside of the roll.",
+    "desc": "Soft shell crab, cucumber, avocado, masago and eel sauce inside of the roll.",
     "prices": [
      {
       "label": "",
@@ -1514,7 +1514,7 @@
    },
    {
     "name": "Dancing Eel Roll",
-    "desc": "Tempura shrimp&#8207; with cream cheese inside, eel and avocado on top.",
+    "desc": "Tempura shrimp with cream cheese inside, eel and avocado on top.",
     "prices": [
      {
       "label": "",
@@ -2315,7 +2315,7 @@
     "spicy": false
    },
    {
-    "name": "O. E. C. Chicken",
+    "name": "O.E.C. Chicken",
     "desc": "Light yellow curry flavored,made with dark meat chicken",
     "prices": [
      {
@@ -2434,7 +2434,7 @@
   "note": "Served with fried rice or noodle, sweet carrots & house salad.",
   "items": [
    {
-    "name": "Vegetable (D)",
+    "name": "Vegetable",
     "desc": "Mixed vegetables and house salad. eggs in the rice",
     "prices": [
      {
@@ -2456,7 +2456,7 @@
     "spicy": false
    },
    {
-    "name": "Chicken &#8207;",
+    "name": "Chicken",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2467,7 +2467,7 @@
     "spicy": false
    },
    {
-    "name": "Steak &#8207;",
+    "name": "Steak",
     "desc": "Mushroom,sweet carrots .and house salad.",
     "prices": [
      {
@@ -2478,7 +2478,7 @@
     "spicy": false
    },
    {
-    "name": "O. E. C. Chicken (light curry chicken)",
+    "name": "O.E.C. Chicken (light curry chicken)",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2489,7 +2489,7 @@
     "spicy": false
    },
    {
-    "name": "Shrimp &#8207;",
+    "name": "Shrimp",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2500,7 +2500,7 @@
     "spicy": false
    },
    {
-    "name": "Salmon &#8207;",
+    "name": "Salmon",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2522,7 +2522,7 @@
     "spicy": false
    },
    {
-    "name": "Chicken and Shrimp &#8207",
+    "name": "Chicken and Shrimp",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2533,7 +2533,7 @@
     "spicy": false
    },
    {
-    "name": "Chicken and Steak &#8207;",
+    "name": "Chicken and Steak",
     "desc": "Mushroom and Sweet carrots.",
     "prices": [
      {
@@ -2544,7 +2544,7 @@
     "spicy": false
    },
    {
-    "name": "Chicken and Scallops &#8207;",
+    "name": "Chicken and Scallops",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2555,7 +2555,7 @@
     "spicy": false
    },
    {
-    "name": "Steak and Shrimp &#8207;",
+    "name": "Steak and Shrimp",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2577,7 +2577,7 @@
     "spicy": false
    },
    {
-    "name": "Shrimp and Scallops &#8207;",
+    "name": "Shrimp and Scallops",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {
@@ -2588,7 +2588,7 @@
     "spicy": false
    },
    {
-    "name": "Jumbo Shrimp &#8207;",
+    "name": "Jumbo Shrimp",
     "desc": "Sweet carrots and house salad.",
     "prices": [
      {

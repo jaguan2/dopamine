@@ -16,6 +16,21 @@ from config_db import db
 
 ORDER_STATUSES = ["received", "confirmed", "ready", "completed", "cancelled"]
 
+# The kitchen may only move an order forward one step, or cancel it before it
+# is done. Without this a stray tap could send a completed order back to
+# "received" and it would reappear in the open queue.
+ALLOWED_TRANSITIONS = {
+    "received":  {"confirmed", "cancelled"},
+    "confirmed": {"ready", "cancelled"},
+    "ready":     {"completed", "cancelled"},
+    "completed": set(),
+    "cancelled": set(),
+}
+
+
+def can_transition(current, target):
+    return target in ALLOWED_TRANSITIONS.get(current, set())
+
 
 class Order(db.Model):
     __tablename__ = "ORDER"

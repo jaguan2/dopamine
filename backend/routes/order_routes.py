@@ -2,25 +2,46 @@ import random
 import string
 
 from flask import Blueprint, jsonify, request, current_app
+from sqlalchemy.exc import IntegrityError
+
 from config_db import db, TAX_RATE, DELIVERY_MINIMUM, KITCHEN_KEY
 from models.location import Location
 from models.menu import PriceOption
-from models.order import Order, OrderItem, ORDER_STATUSES
+from models.order import Order, OrderItem, ORDER_STATUSES, can_transition
+from utils.rate_limit import rate_limit
 
 order_bp = Blueprint("orders", __name__, url_prefix="/api")
 
 MAX_QTY_PER_LINE = 20
 MAX_LINES = 60
+CODE_ATTEMPTS = 5
 
 
 def _new_order_code():
     """Short, unambiguous public code like OEC-7F3K9Q (no 0/O/1/I)."""
     alphabet = "".join(c for c in string.ascii_uppercase + string.digits
                        if c not in "0O1I")
-    while True:
-        code = "OEC-" + "".join(random.choices(alphabet, k=6))
-        if not Order.query.filter_by(order_code=code).first():
-            return code
+    return "OEC-" + "".join(random.choices(alphabet, k=6))
+
+
+def _commit_with_unique_code(build_order):
+    """
+    Persist an order, regenerating its public code if one collides.
+
+    The uniqueness check has to be the database constraint, not a prior
+    SELECT: two concurrent orders can both find a code free and then race to
+    insert it. `build_order(code)` re-creates the ORM objects each attempt
+    because a rolled-back session detaches them.
+    """
+    for _ in range(CODE_ATTEMPTS):
+        order = build_order(_new_order_code())
+        db.session.add(order)
+        try:
+            db.session.commit()
+            return order
+        except IntegrityError:
+            db.session.rollback()
+    raise RuntimeError("could not allocate a unique order code")
 
 
 def _kitchen_authorized():
@@ -28,6 +49,9 @@ def _kitchen_authorized():
 
 
 @order_bp.route("/orders", methods=["POST"])
+@rate_limit(10, 60, "create_order",
+            message="Too many orders from this device — please wait a minute "
+                    "or call us at 727-345-4088.")
 def create_order():
     """
     Place an order (no payment — settled at pickup/delivery).
@@ -72,7 +96,9 @@ def create_order():
         if len(raw_items) > MAX_LINES:
             return jsonify(error="Too many lines in one order."), 400
 
-        order_items = []
+        # Resolve every line against the database first — prices, names and
+        # availability all come from PRICE_OPTION, never from the client.
+        line_specs = []
         subtotal = 0
         for raw in raw_items:
             po = db.session.get(PriceOption, raw.get("price_option_id"))
@@ -82,7 +108,7 @@ def create_order():
             if not isinstance(qty, int) or qty < 1 or qty > MAX_QTY_PER_LINE:
                 return jsonify(error="Invalid quantity."), 400
             subtotal += po.price_cents * qty
-            order_items.append(OrderItem(
+            line_specs.append(dict(
                 price_option_id=po.id,
                 item_name=po.item.name,
                 price_label=po.label or "",
@@ -97,22 +123,24 @@ def create_order():
             ), 400
 
         tax = round(subtotal * TAX_RATE)
-        order = Order(
-            order_code=_new_order_code(),
-            location_id=location.id,
-            customer_name=name[:120],
-            phone=phone[:30],
-            email=(customer.get("email") or "").strip()[:200] or None,
-            fulfillment=fulfillment,
-            address=address or None,
-            notes=(data.get("notes") or "").strip()[:500] or None,
-            subtotal_cents=subtotal,
-            tax_cents=tax,
-            total_cents=subtotal + tax,
-            items=order_items,
-        )
-        db.session.add(order)
-        db.session.commit()
+
+        def build_order(code):
+            return Order(
+                order_code=code,
+                location_id=location.id,
+                customer_name=name[:120],
+                phone=phone[:30],
+                email=(customer.get("email") or "").strip()[:200] or None,
+                fulfillment=fulfillment,
+                address=address or None,
+                notes=(data.get("notes") or "").strip()[:500] or None,
+                subtotal_cents=subtotal,
+                tax_cents=tax,
+                total_cents=subtotal + tax,
+                items=[OrderItem(**spec) for spec in line_specs],
+            )
+
+        order = _commit_with_unique_code(build_order)
         return jsonify(order.to_json()), 201
     except Exception:
         db.session.rollback()
@@ -172,6 +200,12 @@ def update_status(order_id):
         status = (request.get_json(silent=True) or {}).get("status")
         if status not in ORDER_STATUSES:
             return jsonify(error="Invalid status."), 400
+        if status == order.status:
+            return jsonify(order.to_json(include_contact=True)), 200
+        if not can_transition(order.status, status):
+            return jsonify(
+                error=f"Cannot move a {order.status} order to {status}."
+            ), 409
         order.status = status
         db.session.commit()
         return jsonify(order.to_json(include_contact=True)), 200

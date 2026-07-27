@@ -51,8 +51,9 @@ venv\Scripts\python -m pytest
 ```
 frontend/src/
   pages/        Home, Menu (search + add to cart), Checkout,
-                OrderStatus (/order/:code, polls), Kitchen (/kitchen)
-  components/   Header (cart badge), Footer, CartDrawer
+                OrderStatus (/order/:code, polls), Kitchen (/kitchen),
+                NotFound (catch-all — see note below)
+  components/   Header (cart badge), Footer, CartDrawer, CartLine, BackToTop
   contexts/     CartContext — cart lines in localStorage
   styles/       site.css — the whole design system
 
@@ -73,10 +74,20 @@ Domain rules worth knowing:
 - **The server never trusts client prices.** Orders are repriced from
   `PRICE_OPTION` rows at POST time and snapshot name/price per line, so
   menu edits never rewrite order history.
-- Order status flow: `received → confirmed → ready → completed` (or
-  `cancelled`). The status page polls every 10 s; the kitchen every 8 s.
+- Order status flow: `received → confirmed → ready → completed`, or
+  `cancelled` from any non-terminal state. The kitchen can only step forward
+  or cancel — an illegal jump (say, completed back to received) returns 409.
+  The status page polls every 10 s; the kitchen every 8 s.
 - Delivery has a $15.00 pre-tax minimum (enforced client- and server-side);
   tax is 7% (FL 6% + Pinellas County 1%).
+- `POST /api/orders` is rate limited to 10 per minute per client so the queue
+  can't be flooded. The limiter is in-process (`utils/rate_limit.py`); if the
+  app is ever run with multiple workers, move it to a shared store, and add
+  werkzeug's `ProxyFix` when it runs behind a reverse proxy.
+- **Every SPA route needs a match.** The dev server and any static host serve
+  `index.html` for all paths, so a URL with no matching `<Route>` renders a
+  bare header and footer with an empty `<main>`. `App.jsx` keeps a catch-all
+  `*` → `NotFound` and redirects `/index.html` → `/`.
 
 ## Menu data
 

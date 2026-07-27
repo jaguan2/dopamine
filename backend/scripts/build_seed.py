@@ -11,6 +11,7 @@
 #
 # Run from backend/:  python scripts/build_seed.py   (then scripts/seed.py)
 #
+import html
 import json
 import os
 import re
@@ -73,13 +74,26 @@ SPICY = re.compile(r"spicy|jalapeno|kimchi|hot pepper|wasabi mayo", re.I)
 
 # "2 Piece Krab Sushi" / "3 Piece krab Sashimi" -> "Krab"
 PIECE_PREFIX = re.compile(r"^\d+\s*Piece\s+", re.I)
-COURSE_SUFFIX = re.compile(r"\s*\((Lunch|Dinner)\)$", re.I)
+# Course markers the category already conveys: "(Lunch)", "(Dinner)", "(L)", "(D)"
+COURSE_SUFFIX = re.compile(r"\s*\((Lunch|Dinner|L|D)\)\s*$", re.I)
 HIBACHI_INFIX = re.compile(r"\s*Hibachi\s*", re.I)
+
+# The upstream feed carries bidi/zero-width control characters — some as raw
+# codepoints, some as literal "&#8207;" entities that would otherwise render
+# as visible text. Unescape first, then strip whatever marks fall out.
+INVISIBLE = re.compile(
+    "[​-‏‪-‮⁦-⁩﻿�]"
+)
+
+
+def _scrub(text):
+    text = html.unescape(text or "")
+    text = INVISIBLE.sub("", text)
+    return re.sub(r"\s{2,}", " ", text).strip()
 
 
 def clean_name(section, name):
-    name = name.replace("�", "").strip()
-    name = re.sub(r"\s{2,}", " ", name)
+    name = _scrub(name)
     name = COURSE_SUFFIX.sub("", name)
     if section in ("Sushi", "Sashimi"):
         name = PIECE_PREFIX.sub("", name)
@@ -94,14 +108,15 @@ def clean_name(section, name):
     # normalize sentence-case oddities like "krab"
     if name and name[0].islower():
         name = name[0].upper() + name[1:]
-    # typos present in the upstream feed
+    # typos / spacing present in the upstream feed
     name = re.sub(r"\bRol\b", "Roll", name)
+    name = re.sub(r"\bO\.\s*E\.\s*C\.", "O.E.C.", name)
+    name = COURSE_SUFFIX.sub("", name)   # marker may re-surface after edits
     return name.strip()
 
 
 def clean_desc(section, name, desc):
-    desc = desc.replace("�", "").strip()
-    desc = re.sub(r"\s{2,}", " ", desc)
+    desc = _scrub(desc)
     if section == "Sushi Lunch Special":
         desc = ("Choose from 30 classic rolls — vegetable, cucumber, avocado, krab, "
                 "crunch, asparagus, sweet potato, California, salmon skin, tuna, "

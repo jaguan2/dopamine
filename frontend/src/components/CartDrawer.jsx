@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext.jsx";
 import { fmt } from "../lib/money.js";
+import CartLine from "./CartLine.jsx";
 
 export default function CartDrawer() {
-  const { lines, setQty, subtotalCents, drawerOpen, setDrawerOpen } = useCart();
+  const { lines, subtotalCents, drawerOpen, setDrawerOpen } = useCart();
   const navigate = useNavigate();
 
   function checkout() {
@@ -47,34 +48,7 @@ export default function CartDrawer() {
           <>
             <ul className="cart-lines">
               {lines.map((l) => (
-                <li key={l.price_option_id} className="cart-line">
-                  <div className="cart-line-info">
-                    <span className="cart-line-name">
-                      {l.item_name}
-                      {l.price_label && (
-                        <span className="plabel"> ({l.price_label})</span>
-                      )}
-                    </span>
-                    <span className="cart-line-price">
-                      {fmt(l.unit_price_cents * l.quantity)}
-                    </span>
-                  </div>
-                  <div className="qty-stepper">
-                    <button
-                      onClick={() => setQty(l.price_option_id, l.quantity - 1)}
-                      aria-label={`Remove one ${l.item_name}`}
-                    >
-                      −
-                    </button>
-                    <span>{l.quantity}</span>
-                    <button
-                      onClick={() => setQty(l.price_option_id, l.quantity + 1)}
-                      aria-label={`Add one ${l.item_name}`}
-                    >
-                      +
-                    </button>
-                  </div>
-                </li>
+                <CartLine key={l.price_option_id} line={l} />
               ))}
             </ul>
             <div className="cart-drawer-foot">

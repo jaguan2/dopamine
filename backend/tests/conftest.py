@@ -17,6 +17,14 @@ from models.location import Location   # noqa: E402
 from models.menu import Category, MenuItem, PriceOption  # noqa: E402
 
 
+@pytest.fixture(autouse=True)
+def _clear_rate_limits():
+    """Rate-limit counters are process-global; don't let tests bleed together."""
+    from utils.rate_limit import limiter
+    limiter.reset()
+    yield
+
+
 @pytest.fixture(scope="session")
 def client():
     app.config["TESTING"] = True

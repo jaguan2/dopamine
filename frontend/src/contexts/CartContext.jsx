@@ -39,9 +39,22 @@ export function CartProvider({ children }) {
           price_label: priceLabel,
           unit_price_cents: unitPriceCents,
           quantity: 1,
+          instructions: "",
         },
       ];
     });
+  }
+
+  // One note per line. Ordering the same dish twice with different notes
+  // isn't expressible — the kitchen reads the order-level notes for that.
+  function setInstructions(priceOptionId, text) {
+    setLines((prev) =>
+      prev.map((l) =>
+        l.price_option_id === priceOptionId
+          ? { ...l, instructions: text.slice(0, 300) }
+          : l
+      )
+    );
   }
 
   function setQty(priceOptionId, quantity) {
@@ -70,7 +83,7 @@ export function CartProvider({ children }) {
   );
 
   const value = {
-    lines, add, setQty, clear, count, subtotalCents,
+    lines, add, setQty, setInstructions, clear, count, subtotalCents,
     drawerOpen, setDrawerOpen,
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

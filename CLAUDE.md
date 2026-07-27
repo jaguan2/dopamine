@@ -30,7 +30,17 @@ Single location — do not add or reference the former Largo location.
 - All money is **cents (int)** end to end; format only at render time.
 - Order totals are computed server-side from `PRICE_OPTION` rows — never
   trust client prices. Orders snapshot item name/price at purchase time.
-- Order status flow: received → confirmed → ready → completed | cancelled.
+- Order status flow: received → confirmed → ready → completed, or cancelled
+  from any non-terminal state. Enforced by `ALLOWED_TRANSITIONS` in
+  `models/order.py`; an illegal jump returns 409, not 400.
+- Order codes rely on the DB unique constraint, not a pre-check — a prior
+  SELECT races. `_commit_with_unique_code()` retries on IntegrityError.
+- `POST /api/orders` is rate limited (10/min per IP) by `utils/rate_limit.py`
+  — an in-process limiter; move it to Redis if the app ever runs multi-worker,
+  and add werkzeug's ProxyFix if it sits behind a proxy.
+- React Router needs a catch-all `*` route: the dev server and any static host
+  serve index.html for every path, so a missing route renders a bare
+  header + footer with an empty `<main>`.
 - Delivery: $15.00 minimum pre-tax; tax = 7% (FL 6% + Pinellas 1%).
 - Kitchen dashboard auth is a shared key (`KITCHEN_KEY`, header
   `X-Kitchen-Key`) — deliberately simple, no user accounts.
