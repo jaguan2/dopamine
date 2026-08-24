@@ -144,16 +144,11 @@ export default function Menu() {
           <p className="jp-title" lang="ja">お品書き</p>
           <h1>The Menu</h1>
           <p>
-            {totalItems || "Over 280"} dishes, one standard: made when you
-            order it. Add to your cart and pay at pickup or delivery. No card
-            needed online.
+            {totalItems || 288} dishes across the sushi bar, the hibachi grill
+            and the kitchen. Prices are the current online-ordering prices.
+            Payment is taken in person at pickup or delivery.
           </p>
         </div>
-        <div
-          className="seigaiha-band"
-          style={{ backgroundImage: "url('/assets/seigaiha.svg')" }}
-          aria-hidden="true"
-        />
       </section>
 
       <div className="menu-toolbar">
@@ -212,13 +207,13 @@ export default function Menu() {
           {error && (
             <div className="menu-empty" style={{ display: "block" }}>
               <span className="jp" lang="ja">申し訳ありません</span>
-              The menu could not be loaded. Is the kitchen (API) running?
+              The menu could not be loaded. Please try again shortly.
             </div>
           )}
           {!menu && !error && (
             <div className="menu-empty" style={{ display: "block" }}>
               <span className="jp" lang="ja">少々お待ちください</span>
-              Setting the table…
+              Loading the menu…
             </div>
           )}
 

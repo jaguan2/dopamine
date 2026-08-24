@@ -8,10 +8,9 @@ export default function NotFound() {
     <main className="page-narrow">
       <div className="checkout-empty">
         <span className="jp" lang="ja">迷子</span>
-        <h1>This page wandered off</h1>
+        <h1>Page not found</h1>
         <p>
-          Nothing lives at <code>{pathname}</code>, but the sushi bar is still
-          open.
+          There is nothing at <code>{pathname}</code>.
         </p>
         <div className="notfound-actions">
           <Link className="btn btn-primary" to="/">Back to Home</Link>

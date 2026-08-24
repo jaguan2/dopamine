@@ -1,34 +1,35 @@
 /* ==========================================================================
    O.E.C. Japanese Express · Sushi 'n Hibachi
-   Design language: washi paper, sumi ink, vermilion (shu-iro) accents,
-   seigaiha / asanoha patterns, Mincho display type, generous ma (negative space)
+   Design language: washi paper, sumi ink, restrained vermilion (shu-iro),
+   hairline rules, Mincho display type, generous ma (negative space)
    ========================================================================== */
 
 :root {
   /* paper & ink */
-  --washi: #f6f1e7;
-  --washi-2: #efe8d9;
-  --washi-3: #e7deca;
-  --line: #d9cfb8;
-  --sumi: #211d17;
-  --sumi-2: #38322a;
-  --ink-soft: #6f6759;
-  /* accents */
-  --shu: #c73e2d;         /* vermilion */
-  --shu-deep: #a02c1d;
-  --gold: #b08d57;
+  --washi: #f8f5ef;
+  --washi-2: #f2eee6;
+  --washi-3: #e9e3d8;
+  --line: #e4ded3;        /* hairline */
+  --line-strong: #cfc7b8;
+  --sumi: #1b1815;
+  --sumi-2: #423c36;
+  --ink-soft: #7c746a;
+  /* accents, used sparingly: the palette carries the design, not the colour */
+  --shu: #b23a29;         /* vermilion */
+  --shu-deep: #8f2c1e;
+  --gold: #a58a5e;
   --pine: #45543f;
   /* dark sections */
-  --night: #171310;
-  --night-2: #221d17;
-  --night-line: #3a332a;
+  --night: #14110f;
+  --night-2: #1d1917;
+  --night-line: #2f2a26;
 
   --font-display: "Shippori Mincho", "Noto Serif JP", "Yu Mincho", serif;
   --font-body: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Sans", sans-serif;
 
   --maxw: 1120px;
-  --radius: 2px;
-  --shadow: 0 18px 40px -22px rgba(33, 29, 23, 0.35);
+  --radius: 1px;
+  --shadow: 0 20px 46px -30px rgba(27, 24, 21, 0.4);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,12 +44,9 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--sumi);
   background-color: var(--washi);
-  /* faint asanoha-inspired texture */
-  background-image: radial-gradient(rgba(33, 29, 23, 0.028) 1px, transparent 1px);
-  background-size: 22px 22px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -78,10 +76,9 @@ a:hover { color: var(--shu-deep); }
   position: sticky;
   top: 0;
   z-index: 60;
-  background: rgba(246, 241, 231, 0.94);
-  backdrop-filter: blur(8px);
+  background: rgba(248, 245, 239, 0.92);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
-  border-top: 4px solid var(--shu);
 }
 
 .site-header .wrap {
@@ -89,7 +86,7 @@ a:hover { color: var(--shu-deep); }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 72px;
+  height: 84px;
 }
 
 .brand {
@@ -110,14 +107,14 @@ a:hover { color: var(--shu-deep); }
 
 .brand-name {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
 }
 
 .brand-sub {
-  font-size: 10.5px;
-  letter-spacing: 0.32em;
+  font-size: 9.5px;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
@@ -125,34 +122,38 @@ a:hover { color: var(--shu-deep); }
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 34px;
 }
 
+/* lowercase, widely tracked, no heavy underline: the nav should recede */
 .site-nav a {
   color: var(--sumi-2);
-  font-size: 13.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 6px 2px;
-  border-bottom: 2px solid transparent;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
 
-.site-nav a:hover,
-.site-nav a[aria-current="page"] {
-  color: var(--shu);
-  border-bottom-color: var(--shu);
+.site-nav a:hover { color: var(--sumi); }
+
+.site-nav a.active-link {
+  color: var(--sumi);
+  border-bottom-color: var(--line-strong);
 }
 
 .site-nav .nav-cta {
-  border: 1.5px solid var(--shu);
-  color: var(--shu);
-  padding: 9px 18px;
-  border-bottom: 1.5px solid var(--shu);
+  border: 1px solid var(--line-strong);
+  color: var(--sumi);
+  padding: 10px 22px;
+  letter-spacing: 0.2em;
 }
 
 .site-nav .nav-cta:hover {
-  background: var(--shu);
+  background: var(--sumi);
+  border-color: var(--sumi);
   color: var(--washi);
 }
 
@@ -204,11 +205,11 @@ a:hover { color: var(--shu-deep); }
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  padding: 15px 32px;
+  padding: 16px 34px;
   border-radius: var(--radius);
   border: 1.5px solid transparent;
   cursor: pointer;
@@ -218,11 +219,19 @@ a:hover { color: var(--shu-deep); }
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
-  background: var(--shu);
-  color: #fdf9f0;
-  border-color: var(--shu);
+  background: var(--sumi);
+  color: var(--washi);
+  border-color: var(--sumi);
 }
-.btn-primary:hover { background: var(--shu-deep); border-color: var(--shu-deep); color: #fdf9f0; }
+.btn-primary:hover { background: #000; border-color: #000; color: var(--washi); }
+
+/* filled action for dark sections */
+.btn-light {
+  background: var(--washi);
+  color: var(--night);
+  border-color: var(--washi);
+}
+.btn-light:hover { background: transparent; color: var(--washi); }
 
 .btn-ghost {
   background: transparent;
@@ -249,127 +258,85 @@ a:hover { color: var(--shu-deep); }
   overflow: hidden;
 }
 
-/* hinomaru: brushed vermilion sun */
+/* two very quiet warm washes instead of a saturated fill */
 .hero::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: -8%;
-  width: min(58vw, 640px);
-  aspect-ratio: 1;
-  transform: translateY(-52%);
-  border-radius: 50%;
-  background: radial-gradient(circle at 42% 38%, #d8503c 0%, var(--shu) 42%, var(--shu-deep) 78%, #7e2114 100%);
-  opacity: 0.9;
-  filter: blur(0.5px);
-}
-
-/* faint enso ring */
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 12%;
-  left: -140px;
-  width: 420px;
-  aspect-ratio: 1;
-  border: 1.5px solid rgba(246, 241, 231, 0.09);
-  border-radius: 50%;
+  inset: 0;
+  background:
+    radial-gradient(120% 90% at 78% 26%, rgba(178, 58, 41, 0.15), transparent 62%),
+    radial-gradient(90% 70% at 10% 88%, rgba(165, 138, 94, 0.09), transparent 66%);
   pointer-events: none;
 }
 
 .hero .wrap {
   position: relative;
   z-index: 2;
-  min-height: min(78vh, 760px);
+  min-height: min(70vh, 620px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 96px;
-  padding-bottom: 140px;
+  align-items: center;
+  text-align: center;
+  padding-top: 112px;
+  padding-bottom: 132px;
 }
 
 .hero-kicker {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
-  font-size: 13px;
-  letter-spacing: 0.42em;
+  gap: 16px;
+  font-size: 10.5px;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 26px;
+  color: rgba(248, 245, 239, 0.5);
+  margin-bottom: 30px;
 }
 
-.hero-kicker::before {
+.hero-kicker::before,
+.hero-kicker::after {
   content: "";
-  width: 44px;
+  width: 40px;
   height: 1px;
-  background: var(--gold);
+  background: rgba(248, 245, 239, 0.22);
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(46px, 8.2vw, 96px);
-  line-height: 1.04;
-  letter-spacing: 0.06em;
-  max-width: 12ch;
+  font-weight: 500;
+  font-size: clamp(30px, 4.6vw, 54px);
+  line-height: 1.28;
+  letter-spacing: 0.05em;
+  max-width: 22ch;
 }
 
-.hero h1 .accent { color: #e8a091; }
-
 .hero-tag {
-  margin-top: 28px;
-  max-width: 52ch;
-  font-size: 17px;
-  color: rgba(246, 241, 231, 0.82);
+  margin-top: 24px;
+  max-width: 46ch;
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: rgba(248, 245, 239, 0.62);
 }
 
 .hero-tag .jp {
   display: block;
-  margin-top: 10px;
+  margin-top: 14px;
   font-family: var(--font-display);
-  font-size: 14px;
-  letter-spacing: 0.5em;
-  color: rgba(246, 241, 231, 0.55);
+  font-size: 12.5px;
+  letter-spacing: 0.46em;
+  color: rgba(248, 245, 239, 0.4);
 }
 
 .hero-actions {
-  margin-top: 44px;
+  margin-top: 42px;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* vertical Japanese side text */
-.hero-vertical {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: 42px;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  font-family: var(--font-display);
-  font-size: 21px;
-  letter-spacing: 0.55em;
-  color: rgba(246, 241, 231, 0.92);
-  text-shadow: 0 1px 12px rgba(23, 19, 16, 0.5);
+  justify-content: center;
+  gap: 14px;
 }
 
 @media (max-width: 720px) {
-  .hero-vertical { display: none; }
   .hero .wrap { min-height: min(64vh, 560px); padding-bottom: 110px; }
-}
-
-/* seigaiha wave band along hero bottom */
-.seigaiha-band {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 54px;
-  background-repeat: repeat-x;
-  background-size: auto 100%;
 }
 
 /* --------------------------------------------------------------------------
@@ -399,51 +366,61 @@ a:hover { color: var(--shu-deep); }
    Sections
    -------------------------------------------------------------------------- */
 
-.section { padding: 96px 0; }
+.section { padding: 112px 0; }
 
-.section-head { margin-bottom: 56px; }
+.section-head { margin-bottom: 60px; }
 
 .section-head.center { text-align: center; }
 
 .section-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   font-family: var(--font-display);
-  font-size: 14px;
-  letter-spacing: 0.42em;
-  color: var(--shu);
-  margin-bottom: 14px;
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
 }
 
 .section-head.center .section-kicker::before,
 .section-head.center .section-kicker::after {
   content: "";
-  width: 32px;
+  width: 34px;
   height: 1px;
-  background: var(--gold);
+  background: var(--line-strong);
 }
 
 .section-head:not(.center) .section-kicker::before {
   content: "";
-  width: 32px;
+  width: 34px;
   height: 1px;
-  background: var(--gold);
+  background: var(--line-strong);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(30px, 4.4vw, 44px);
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  font-weight: 500;
+  font-size: clamp(26px, 3.4vw, 38px);
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+/* a single hairline under centred titles, in place of heavier ornament */
+.section-head.center .section-title::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: var(--line-strong);
+  margin: 24px auto 0;
 }
 
 .section-sub {
-  margin-top: 16px;
-  max-width: 62ch;
+  margin-top: 18px;
+  max-width: 56ch;
   color: var(--ink-soft);
-  font-size: 16px;
+  font-size: 14.5px;
 }
 
 .section-head.center .section-sub { margin-left: auto; margin-right: auto; }
@@ -463,21 +440,30 @@ a:hover { color: var(--shu-deep); }
   .story-grid { grid-template-columns: 1fr; gap: 40px; }
 }
 
-.story-copy p + p { margin-top: 18px; }
-.story-copy p { color: var(--sumi-2); }
+/* Direct children only: a bare `.story-copy p` also caught the section
+   kicker and darkened it out of step with every other section. */
+.story-copy > p + p { margin-top: 20px; }
 
+.story-copy > p {
+  color: var(--sumi-2);
+  max-width: 48ch;
+  text-wrap: pretty;   /* keeps a lone word off the last line */
+}
+
+/* hairlines on the cells, so a short final row leaves space, not a block */
 .story-points {
-  margin-top: 30px;
+  margin-top: 32px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
 
 .story-point {
-  background: var(--washi);
-  padding: 20px 18px;
+  background: transparent;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 18px;
   text-align: center;
 }
 
@@ -500,55 +486,60 @@ a:hover { color: var(--shu-deep); }
    Specialties cards
    -------------------------------------------------------------------------- */
 
+/* hairlines drawn on the cards, not behind them: a short final row then
+   leaves empty space rather than a filled block */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
 }
 
 .card {
   position: relative;
-  background: var(--washi);
-  border: 1px solid var(--line);
-  padding: 34px 28px 30px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 26px 32px;
+  transition: background 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--gold);
-}
+.card:hover { background: var(--washi-2); }
 
 .card-kanji {
   font-family: var(--font-display);
-  font-size: 42px;
+  font-size: 28px;
   line-height: 1;
   color: var(--shu);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .card h3 {
   font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   letter-spacing: 0.06em;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 14.5px;
+  font-size: 13.5px;
+  line-height: 1.8;
   color: var(--ink-soft);
 }
 
 .card .card-link {
   display: inline-block;
-  margin-top: 16px;
-  font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  margin-top: 18px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
+  color: var(--sumi);
 }
+
+.card .card-link:hover { color: var(--shu); }
 
 .card .card-link::after { content: " →"; }
 
@@ -571,23 +562,7 @@ a:hover { color: var(--shu-deep); }
   text-align: center;
 }
 
-.banner-dark .vertical-deco {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  writing-mode: vertical-rl;
-  font-family: var(--font-display);
-  font-size: 15px;
-  letter-spacing: 0.6em;
-  color: rgba(246, 241, 231, 0.14);
-  user-select: none;
-}
-
-.banner-dark .vertical-deco.left { left: 40px; }
-.banner-dark .vertical-deco.right { right: 40px; }
-
 @media (max-width: 720px) {
-  .banner-dark .vertical-deco { display: none; }
 }
 
 .banner-dark h2 {
@@ -636,17 +611,8 @@ a:hover { color: var(--shu-deep); }
 .location-card {
   background: var(--washi);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--shu);
-  padding: 38px 34px;
+  padding: 44px 40px;
   box-shadow: var(--shadow);
-}
-
-.location-card .loc-jp {
-  font-family: var(--font-display);
-  color: var(--shu);
-  font-size: 14px;
-  letter-spacing: 0.4em;
-  margin-bottom: 8px;
 }
 
 .location-card h3 {
@@ -715,8 +681,7 @@ a:hover { color: var(--shu-deep); }
 
 .site-footer {
   background: var(--night);
-  color: rgba(246, 241, 231, 0.72);
-  border-top: 4px solid var(--shu);
+  color: rgba(248, 245, 239, 0.66);
 }
 
 .site-footer .wrap {
@@ -872,13 +837,13 @@ a:hover { color: var(--shu-deep); }
 .group-chips a {
   flex: none;
   font-size: 12.5px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
   color: var(--sumi-2);
   border: 1px solid var(--line);
   background: var(--washi);
-  padding: 9px 16px;
+  padding: 9px 18px;
   border-radius: 999px;
   transition: all 0.2s;
 }
@@ -920,11 +885,11 @@ a:hover { color: var(--shu-deep); }
 
 .menu-rail h3 {
   font-family: var(--font-display);
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  color: var(--shu);
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  color: var(--ink-soft);
   text-transform: uppercase;
-  margin: 22px 0 8px;
+  margin: 24px 0 10px;
 }
 
 .menu-rail h3:first-child { margin-top: 0; }
@@ -1145,7 +1110,6 @@ a:hover { color: var(--shu-deep); }
 
 /* section-alt replaces the old inline-styled specialties band */
 .section-alt {
-  background: var(--washi-2);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -1416,7 +1380,7 @@ a:hover { color: var(--shu-deep); }
 
 .order-summary {
   border: 1px solid var(--line);
-  border-top: 4px solid var(--shu);
+  border-top: 2px solid var(--sumi);
   background: var(--washi);
   padding: 24px;
   box-shadow: var(--shadow);
@@ -1616,11 +1580,9 @@ a:hover { color: var(--shu-deep); }
   align-items: center;
   justify-content: center;
   gap: 18px;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(199, 62, 45, 0.08), transparent 55%),
-    var(--washi-2);
+  background: var(--washi-2);
   border: 1px solid var(--line);
-  outline: 1.5px solid var(--gold);
+  outline: 1px solid var(--line);
   outline-offset: 10px;
   margin: 12px;
   box-shadow: var(--shadow);
@@ -1628,10 +1590,10 @@ a:hover { color: var(--shu-deep); }
 
 .story-panel-kanji {
   font-family: var(--font-display);
-  font-size: clamp(120px, 18vw, 200px);
+  font-size: clamp(96px, 13vw, 150px);
   line-height: 1;
   color: var(--shu);
-  text-shadow: 0 2px 24px rgba(199, 62, 45, 0.25);
+  opacity: 0.86;
 }
 
 .story-panel-reading {
@@ -1669,16 +1631,15 @@ a:hover { color: var(--shu-deep); }
 
 .fav-kanji {
   flex: none;
-  width: 54px;
-  height: 54px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
   font-family: var(--font-display);
-  font-size: 22px;
-  color: var(--washi);
-  background: var(--shu);
-  border-radius: 4px;
-  box-shadow: 0 6px 14px -6px rgba(160, 44, 29, 0.5);
+  font-size: 19px;
+  color: var(--shu);
+  background: transparent;
+  border: 1px solid var(--line-strong);
 }
 
 .fav-body { flex: 1; }

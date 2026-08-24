@@ -78,7 +78,7 @@ export default function Checkout() {
         <p className="section-kicker" lang="ja">お会計</p>
         <h1 className="section-title">Check Out</h1>
         <p className="section-sub">
-          No payment online. Settle up when you collect your order.
+          Payment is taken in person at pickup or delivery.
         </p>
       </div>
 

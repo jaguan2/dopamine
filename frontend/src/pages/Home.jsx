@@ -5,27 +5,27 @@ import api from "../lib/api.js";
 const SPECIALTIES = [
   {
     kanji: "鮨", title: "Sushi Bar", link: "/menu#group-sushi-bar",
-    text: "Nigiri, sashimi and more than eighty rolls, from classic cuts to special creations like the Dancing Eel and Volcano.",
+    text: "Nigiri and sashimi cut to order, with more than eighty rolls from classic cuts to house specials.",
     cta: "See the rolls",
   },
   {
     kanji: "焼", title: "Hibachi", link: "/menu#group-hibachi-kitchen",
-    text: "Chicken, steak, shrimp, salmon and scallops seared with sweet carrots, fried rice or noodles and house salad.",
+    text: "Chicken, steak, shrimp, salmon and scallops from the flat top, with sweet carrots, fried rice or noodles and house salad.",
     cta: "See hibachi",
   },
   {
-    kanji: "弁", title: "Bento & Lunch Specials", link: "/menu#group-bento-lunch",
-    text: "Lunch bento for $13.50 with California roll, salad, rice and shumai, plus any two classic rolls for $8.99, Mon–Sat.",
+    kanji: "弁", title: "Bento & Lunch", link: "/menu#group-bento-lunch",
+    text: "Lunch bento at $13.50 with California roll, salad, rice and shumai. Any two classic rolls at $8.99, Monday to Saturday.",
     cta: "See lunch",
   },
   {
     kanji: "丼", title: "Poke Bowls", link: "/menu#cat-poke-bowl",
-    text: "Two or three scoops of fish over rice with crab, cucumber, crunch and seaweed salad.",
+    text: "Two or three scoops of fish over rice, with krab, cucumber, crunch and seaweed salad.",
     cta: "Build a bowl",
   },
   {
     kanji: "麺", title: "Noodles & Kitchen", link: "/menu#cat-yaki-udon",
-    text: "Yaki udon, noodle soups, teriyaki, katsu and wok classics like General Tso's chicken.",
+    text: "Yaki udon and soba, noodle soups, teriyaki, katsu and entrees from the kitchen.",
     cta: "See noodles",
   },
 ];
@@ -53,62 +53,55 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="hero">
         <div className="wrap">
-          <p className="hero-kicker">St.&nbsp;Petersburg&nbsp;·&nbsp;Florida</p>
-          <h1>
-            Fresh from the <span className="accent">sushi bar</span>, hot off
-            the hibachi.
-          </h1>
+          <p className="hero-kicker">St. Petersburg, Florida</p>
+          <h1>Sushi bar and hibachi kitchen</h1>
           <p className="hero-tag">
-            Family-run Japanese kitchen serving hand-rolled sushi, sizzling
-            hibachi, bento boxes and poke bowls. Made to order, every day but
-            Tuesday.
+            Serving St. Petersburg since 2011. Every dish is prepared once it
+            is ordered. Closed Tuesdays.
             <span className="jp" lang="ja">寿司・鉄板焼・弁当・ポケ丼</span>
           </p>
           <div className="hero-actions">
-            <Link className="btn btn-primary" to="/menu">Order Online</Link>
+            <Link className="btn btn-light" to="/menu">Order Online</Link>
             <Link className="btn btn-ghost-light" to="/menu">View the Menu</Link>
           </div>
         </div>
-        <p className="hero-vertical" lang="ja" aria-hidden="true">
-          おいしい えん・美味しい縁
-        </p>
-        <div
-          className="seigaiha-band"
-          style={{ backgroundImage: "url('/assets/seigaiha.svg')" }}
-          aria-hidden="true"
-        />
       </section>
 
       {/* ── Info ribbon ── */}
       <div className="ribbon" role="note">
         <div className="wrap">
-          <span><strong>Closed Tuesdays</strong></span>
+          <span>Closed Tuesdays</span>
           <span>
-            Call in <a href="tel:+17273454088"><strong>727-345-4088</strong></a>
+            <a href="tel:+17273454088">727-345-4088</a>
           </span>
-          <span>Take out · Dine in · <strong>We deliver</strong> ($15 min)</span>
+          <span>Take out · Dine in · Delivery ($15 minimum)</span>
         </div>
       </div>
 
-      {/* ── Story ── */}
+      {/* ── The restaurant ── */}
       <section className="section" id="about">
         <div className="wrap story-grid">
           <div className="story-copy">
             <div className="section-head">
-              <p className="section-kicker" lang="ja">ようこそ</p>
-              <h2 className="section-title">
-                A neighborhood izakaya spirit, Florida made
-              </h2>
+              <p className="section-kicker" lang="ja">店について</p>
+              <h2 className="section-title">The restaurant</h2>
             </div>
             <p>
-              O.E.C. Japanese Express has been rolling sushi and firing the
-              hibachi for St. Petersburg from our kitchen on 66th Street.
-              Everything is prepared when you order it: rice seasoned through
-              the day, fish cut to order, vegetables from the morning delivery.
+              Opened in 2011. Family owned. A fresh sushi bar, with hibachi
+              dishes off the grill.
             </p>
             <p>
-              The menu runs deep, from a $3.75 egg roll to sushi paradise
-              platters for two. Come hungry, leave happy.
+              Nigiri and sashimi are cut to order, and there are close to
+              ninety rolls between the classic list and the sushi bar's own
+              specials, from a plain cucumber roll at $4.95 upward. Rolls can
+              be made as hand rolls on request. Naruto comes wrapped in
+              cucumber instead of rice, and poke bowls are built scoop by
+              scoop.
+            </p>
+            <p>
+              The kitchen handles hibachi, bento boxes, katsu, tempura, udon
+              and soba, with beer, wine and sake at the bar. Dine in, take
+              out, or let us deliver. Come give us a try.
             </p>
             <div className="story-points" role="list">
               <div className="story-point" role="listitem">
@@ -120,27 +113,27 @@ export default function Home() {
                 <span className="en">Hibachi grilled</span>
               </div>
               <div className="story-point" role="listitem">
-                <span className="jp" lang="ja">心</span>
-                <span className="en">Family run</span>
+                <span className="jp" lang="ja">巻</span>
+                <span className="en">~90 rolls</span>
               </div>
             </div>
           </div>
           <div className="story-panel" aria-hidden="true">
             <span className="story-panel-kanji" lang="ja">縁</span>
-            <span className="story-panel-reading" lang="ja">えん・おいしい縁</span>
-            <span className="story-panel-caption">Delicious connections · est. 2011</span>
+            <span className="story-panel-reading" lang="ja">えん</span>
+            <span className="story-panel-caption">Est. 2011</span>
           </div>
         </div>
       </section>
 
-      {/* ── Specialties ── */}
+      {/* ── What we serve ── */}
       <section className="section section-alt">
         <div className="wrap">
           <div className="section-head center">
             <p className="section-kicker" lang="ja">お品書き</p>
-            <h2 className="section-title">From our kitchen</h2>
+            <h2 className="section-title">What we serve</h2>
             <p className="section-sub">
-              Five ways to eat well at O.E.C., every one made to order.
+              Sushi bar, hibachi grill, bento, poke and noodles.
             </p>
           </div>
           <div className="cards">
@@ -156,15 +149,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── House favorites ── */}
+      {/* ── Signature rolls ── */}
       <section className="section" id="favorites">
         <div className="wrap">
           <div className="section-head center">
-            <p className="section-kicker" lang="ja">人気の巻き</p>
-            <h2 className="section-title">House favorite rolls</h2>
+            <p className="section-kicker" lang="ja">特製巻き</p>
+            <h2 className="section-title">Signature rolls</h2>
             <p className="section-sub">
-              Six specials our regulars keep coming back for, all made to order
-              at the sushi bar.
+              Six from the sushi bar's special roll list.
             </p>
           </div>
           <div className="fav-grid">
@@ -187,28 +179,25 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <p className="fav-more">
+          <div className="fav-more">
             <Link className="btn btn-ghost" to="/menu#cat-sushi-special-roll">
               See all 34 special rolls
             </Link>
-          </p>
+          </div>
         </div>
       </section>
 
-      {/* ── Order banner ── */}
+      {/* ── Order ── */}
       <section className="banner-dark">
-        <p className="vertical-deco left" lang="ja" aria-hidden="true">出前・持ち帰り</p>
-        <p className="vertical-deco right" lang="ja" aria-hidden="true">お電話ください</p>
         <div className="wrap">
-          <h2>Dinner is a phone call away</h2>
+          <h2>Order for pickup or delivery</h2>
           <p>
-            Order online for pickup or delivery, or call us directly.
-            Delivery from a $15 minimum, before tax. Pay when you pick up.
-            No card required online.
+            Orders are placed online and paid in person, at the counter or at
+            the door. Delivery requires a $15.00 subtotal before tax.
           </p>
           <p className="hours-note">Open every day except Tuesday</p>
           <div className="actions">
-            <Link className="btn btn-primary" to="/menu">Start an Order</Link>
+            <Link className="btn btn-light" to="/menu">Start an Order</Link>
             <a className="btn btn-ghost-light" href="tel:+17273454088">
               Call 727-345-4088
             </a>
@@ -216,16 +205,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Location ── */}
+      {/* ── Visit ── */}
       <section className="section" id="location">
         <div className="wrap">
           <div className="section-head center">
             <p className="section-kicker" lang="ja">店舗案内</p>
-            <h2 className="section-title">Find us on 66th Street</h2>
+            <h2 className="section-title">Visit</h2>
           </div>
           <div className="locations-grid single">
             <article className="location-card">
-              <p className="loc-jp" lang="ja">セントピーターズバーグ</p>
               <h3>{location ? location.name : "O.E.C. Japanese Express"}</h3>
               <p className="loc-sub">
                 {location ? location.tagline : "St. Petersburg · call in · take out · dine in"}
